@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+		<script>		
+		</script>
+		<style>
+			h2, p{
+				color: black;
+			}
+			.each_recom{
+				width: 100vw;
+				//border: 3px solid grey;
+				//margin:0;
+				padding: 10px 0px 10px 0px;
+			}
+			.each_recom img {
+				margin: 10px 10px 10px 10px;
+				overflow:hidden;
+				diplay: flex;
+				align-items: center;
+				justify-content: center;
+				width:230px;
+				height:230px;
+			}
+			body {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>메뉴여기</p>
+		</div>
+		<div class="container-fluid">
+			<h2>Recommendation</h2>
+		</div>
+		<div class="container-fluid total_articles">
+			<div class="row each_recom">
+				<div class="col-sm-3">
+					<img src="example.jpg" alt="picture" class="img-responsive pic" >
+				</div>
+				<div class="col-sm-9 recomword">
+					<a href="">
+						<h2>Example city, the beautiful skyline</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</a>	
+				</div>
+			</div>
+			<div class="row each_recom">
+				<div class="col-sm-3">
+					<img src="blue.jpg" alt="picture" class="img-responsive pic" >
+				</div>
+				<div class="col-sm-9 recomword">
+					<a href="">
+						<h2>Example city, the beautiful skyline</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-sm-12">
+				<button class="btn btn-default" onClick="location.href='part2.html'" type="submit">Back</button>	<!--글자만 있는걸로 바꾸기-->
+			</div>
+		</div>
+	</body>
+</html>
