@@ -4,175 +4,189 @@
 <head>
   <title>Enjoy travel</title>
   <meta charset="utf-8">
-  <link type="text/css" rel="stylesheet" href="style.css">
-  <script src="scrpt.js"></script>
-
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <style>
-    #menu-button {
-      width: 40px;
-      border: none;
-      background-color: transparent;
-      padding: 10px;
-      cursor: pointer;
-      margin-right: 2em;
+    .top {
+      text-align: center;
+      padding-bottom: 20px;
     }
 
-    #menu-button:focus {
-      outline: none;
+    .under {
+      display: inline;
+      margin-left: 20px;
+      padding:5px;
     }
 
-    #menu-button>.bar {
-      width: 100%;
-      height: 3px;
-      background-color: orange;
-      border-radius: 1.5px;
-      margin: 3px auto;
-    }
-
-    .carousel-inner>.item>img {
-      margin: 20px auto;
+    .firstimage {
       width: 100%;
       height: 500px;
     }
 
-    .bg-popular {
-      background-color: yellow;
+    .secondimage {
+      width: 100%;
+      height: 300px;
     }
 
-    .bg-recommend {
-      backgroud-color: red;
+    .thirdimage {
+      width: 100%;
+      height: 700px;
+    }
+
+    .bg-1 {
+      background-image: url("image.jpg");
+      background-size: 100% 600px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-2 {
+      background-image: url("image1.jpg");
+      background-size: 100% 500px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-3 {
+      background-image: url("image2.jpg");
+      background-size: 100% 400px;
+      background-repeat: no-repeat;
     }
   </style>
+
+  <script>
+    function fun() {
+      var con = documnet.getElementById("side");
+      if (con.style.display == 'none') {
+        con.style.display = 'block';
+
+      } else {
+        con.style.display = 'none';
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <nav class="navbar">
-        <button id="menu-button">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </button>
-      </nav>
-      <nav id="side-menu" class="hidden">
-        <ul>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Menu</a></li>
-        </ul>
-      </nav>
+  <header>
+    <div class="container-fluid text-center">
+      <h1>Title</h1>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search"></span> Search<span class="caret"></span></a>
-        <ul class="dropdown-menu" style="width : 400px">
-          <form class="navbar-form navbar-left" action="search 결과 페이지!!!!">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search" name="search" style="width : 330px">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                  <i class="glyphicon glyphicon-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-heart"></span> Help<span class="caret"></span></a>
-        <ul class="dropdown-menu" style="width : 700px">
-          <div class="col-sm-4">
-            <p><strong>contact</strong></p>
-            <p>01012345678</p>
-          </div>
-          <div class="col-sm-4">
-            <p><strong>Information</strong></p>
-            <p>01012345678</p>
-          </div>
-          <div class="col-sm-4">
-            <p><strong>Frequently asked questions</strong></p>
-            <p>zzzz</p>
-          </div>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> My account<span class="caret"></span></a>
-        <ul class="dropdown-menu" style="width : 300px">
-          <p style="margin : 30px">Join or Login</p>
-          <div class="col-sm-3">
-          </div>
-          <div class="col-sm-3">
-            <button type="button" class="btn">Join</button>
-          </div>
-          <div class="col-sm-3">
-            <button type="button" class="btn btn-primary">Login</button>
-          </div>
-          <div class="col-sm-3">
-          </div>
-        </ul>
-  </div>
-  </div>
-  </nav>
-  <div class="container-fluid text-center">
-    <img src="logo.png" alt="logo" style="height: 500px">
-  </div>
 
 
+    <div class="container-fluid text-center">
+      <div class="navbar-header">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">menu</button>
+          <ul class="dropdown-menu">
+            <li a href="#" class="top">지도</a></li>
+            <li a href="#" class="top">최신 글</a></li>
+            <li a href="#" class="top">관리자 추천</a></li>
+            <br><br>
 
+            <li a href="#" class="under"><i class="glyphicon glyphicon-pencil"></i></a></li>
+            <li a href="#" class="under"><i class="glyphicon glyphicon-pushpin"></i></a></li>
+            <li a href="#" class="under"><i class="glyphicon glyphicon-pushpin"></i></a></li>
 
-
-
-
-  <div class="container-fluid text-center bg-popular">
-    <h3>인기글</h3>
-    <div id="popularimageCarousel" class="carousel slide text-center" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#popularimageCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#popularimageCarousel" data-slide-to="1"></li>
-        <li data-target="#popularimageCarousel" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="image.jpg" alt="image">
-          <div class="carousel-caption">
-            <h3>Los Angeles</h3>
-            <p>LA is always so much fun!</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="image1.jpg" alt="image1">
-        </div>
-
-        <div class="item">
-          <img src="image2.jpg" alt="image2">
+          </ul>
         </div>
       </div>
 
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#popularimageCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="ture"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#popularimageCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search"></span> Search</a>
+          <ul class="dropdown-menu" style="width : 400px">
+            <form class="navbar-form navbar-left" action="search 결과 페이지!!!!">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search" style="width : 330px">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-heart"></span> Help</a>
+          <ul class="dropdown-menu" style="width : 700px">
+            <div class="col-sm-4">
+              <p><strong>contact</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Information</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Frequently asked questions</strong></p>
+              <p>zzzz</p>
+            </div>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> My account</a>
+          <ul class="dropdown-menu" style="width : 300px">
+            <p style="margin : 30px">Join or Login</p>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn">Join</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary">Login</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </div>
-  </div>
 
+  </header>
 
+  <div class="container-fluid text-center">
+    <div class="col-sm-4 bg-1" style="height : 600px">
+      <h1>수도권</h1>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="#" style="font-size : 20px; color:white">More</a>
+    </div>
+
+    <div class="col-sm-4 bg-1" style="height : 600px">
+      <h1>강원도</h1>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="#" style="font-size : 20px; color:white">More</a>
+    </div>
+
+    <div class="col-sm-4 bg-1" style="height : 600px">
+      <h1>충청도</h1>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="#" style="font-size : 20px; color:white">More</a>
+    </div>
+
+    <div class="container-fluid text-center">
+      <div class="col-sm-6 bg-2" style="height : 500px">
+        <h1>경상도</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#" style="font-size : 20px; color:white">More</a>
+      </div>
+
+      <div class="col-sm-6 bg-2" style="height : 500px">
+        <h1>전라도</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#" style="font-size : 20px; color:white">More</a>
+      </div>
+
+      <div class="container-fluid text-center">
+        <div class="col-sm-12 bg-3" style="height : 400px">
+          <h1>제주도</h1>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="#" style="font-size : 20px; color:white">More</a>
+        </div>
 
 </body>
 
