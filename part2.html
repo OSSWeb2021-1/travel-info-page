@@ -8,10 +8,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 		<style>
-			.map{
-				display: block;
-				margin: 0px auto;
+			html{
+				scroll-behavior: smooth;
 			}
 			.bg {
 				background-color: grey;
@@ -54,13 +54,57 @@
 	<h3>지도 화면</h3>
 		<div class="container-fluid">
 			<p>메뉴?</p>
-			
-			<div class= "map_page text-center">
-				<img src = "koreanmap.jpg" alt="koreanmap" class="img-responsive map" style="width:30%">
+			<body>
+			<div  align="center">
+				<div id="map" style="width: 800px; height: 550px;"></div>
+				 <script type="text/javascript">
+
+					var locations = [
+					  ['Seoul, Incheon & Gyeonggi <br><br>'+'등록된 글 '+' 개<br><a href="#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
+					  ['Daejeon, Sejong & Cheongchung <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
+					  ['Gwangju & Jeolla <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
+					  ['Daegu, Ulsan, Busan & Gyeonsang <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
+					  ['Gangwon <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
+					  ['Jeju <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
+					];
+
+					var map = new google.maps.Map(document.getElementById('map'), {
+					  zoom: 7,
+					  center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
+					  mapTypeId: google.maps.MapTypeId.ROADMAP
+					});
+
+					var infowindow = new google.maps.InfoWindow();
+					var marker, i;
+					for (i = 0; i < locations.length; i++) {  
+					  marker = new google.maps.Marker({
+						id:i,
+						position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+						map: map
+					  });
+
+					  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+						return function() {
+						  infowindow.setContent(locations[i][0]);
+						  infowindow.open(map, marker);
+						}
+					  })(marker, i));
+
+					  if(marker){
+						marker.addListener('click', function() {
+						  map.setZoom(15);
+						  map.setCenter(this.getPosition());
+						});
+						}
+					}
+
+				  </script>
+				  
 			</div>
-		</div>
+				  
+		</div>			
 		
-		<div class="container-fluid">
+		<div class="container-fluid" id="recent">
 		<h4>Recent Articles</h4>
 			<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="false">
 				<!-- Indicators -->
@@ -138,7 +182,7 @@
 			</div>
 		
 		</div>
-		
+
 	<!--recommendation-->
 		<div class="container-fluid">
 		<h4>Recommendation</h4>
@@ -157,6 +201,7 @@
 			<div class="col-sm-12">
 				<button class="btn btn-default pull-right" onClick="location.href='part2_recom.html'" type="submit">More</button>	<!--글자만 있는걸로 바꾸기-->
 			</div>
+		</div>
 		</div>
 	</body>
 </html>
