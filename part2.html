@@ -9,6 +9,30 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+		//팝업
+			function layer_popup(el){
+			  var $el = $(el);
+			  var isDim = $el.prev().hasClass('dimBackground');
+			  isDim ? $('.background').fadeIn(100) : $el.fadeIn();
+			  var $elWidth = ~~($el.outerWidth()), $elHeight = ~~($el.outerHeight()), docWidth = $(document).width(), docHeight = $(document).height();
+
+				if ($elHeight < docHeight || $elWidth < docWidth) {
+					$el.css({ marginTop: -$elHeight /2, marginLeft: -$elWidth/2});
+				}else { $el.css({top: 0, left: 0});
+				}
+				$(".popuplayer").css("overflow","auto");
+				
+			}
+
+			function closelayer(){
+				var isDim = $(".popuplayer").prev().hasClass('dimBackground');
+				isDim ? $('.background').fadeOut(100) : $el.fadeOut();
+				$("body").css("overflow-x","hidden");
+				
+			}
+		</script>
 		<style>
 			html{
 				scroll-behavior: smooth;
@@ -45,7 +69,76 @@
 			body {
 				margin:0;
 			}
+			/*팝업*/
+			.background{
+				display:none;
+				position:fixed;
+				_position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				z-index:100;
+			}
+
+			.background .dimBackground {	//뒷배경
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:#000;
+				opacity: .1;
+				filter:alpha(opacity=10);
+			}
+
+			.background .popuplayer{
+				display:block;
+			}
+
+			.popuplayer { /*레이어 팝업 창*/
+				background-color:#f1f1f1;
+				width:700px;
+				height:500px;
+				display:none;
+				position:absolute;
+				top:50%;
+				left:50%;
+				z-index:10;
+				color:#000;
+			}
+
+			.popuplayer::-webkit-scrollbar {	/*스크롤바 전체*/
+				width: 10px;
+			}
+			.popuplayer::-webkit-scrollbar-thumb { /*스크롤바 움직이는 부분*/
+				background-color: grey;
+				border-radius: 10px;
+				background-clip: padding-box;
+				border: 2px solid transparent;
+			}
+			.popuplayer::-webkit-scrollbar-track { /*움직이는 부분 배경*/
+				background-color: lightgrey;
+				border-radius: 10px;
+				box-shadow: inset 0px 0px 5px white;
+			}
 			
+			.item a p{
+				width: 200px;
+				color: black;
+				text-overflow:ellipsis;
+				white-space:wrap;
+				overflow:hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				word-wrap: break-word;
+				//line-height: 1.2em;	//글자 높이 조절
+				//height:2.4em;	//총 높이
+			}
+			p {
+				margin-left: 30px;
+			}
 		</style>
     </script>
 	</head>
@@ -106,6 +199,7 @@
 		
 		<div class="container-fluid" id="recent">
 		<h4>Recent Articles</h4>
+		
 			<div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="false">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
@@ -113,8 +207,10 @@
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				</ol>
 				
+				
 				<div class="carousel-inner">	<!--이거인거같음-->
 					<div class="item active">
+					<!--
 						<div class="row text-center">
 							<div class="col-sm-3">
 								<a href="" target="_self">
@@ -136,31 +232,35 @@
 									<img src="example.jpg" alt="picture" class="img-responsive pic" >
 								</a>
 							</div>	
-						</div>
+						</div> -->
+						<script>
+							document.write('<div class="row text-center">');
+							for(var i=0;i<4;i++){
+							document.write('<div class="col-sm-3">');
+							document.write('<a href="javascript:layer_popup(\'.popuplayer\');">');
+							document.write('<img src="example.jpg" alt="picture" class="img-responsive pic"><p>Gyeongpo-beach, The best beach I\'ve ever been</p></a>');
+							document.write('<div class="background"><div class="dimBackground" onClick=\'javascript:closelayer();\'></div>');
+							document.write('<div class="popuplayer"><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p>');
+							document.write('<img src="example.jpg"><p>예시 글과 사진</p><br><p>팝업레이어</p>팝업레이어<br>팝업레이어<br>팝업레이어<br>팝업레이어<br></p></div></div>');
+							document.write('</div>');
+							}
+							document.write('</div>');
+						</script>
 					</div>
 					<div class="item">
-					  <div class="row text-center">
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>			
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>		
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>	
-						</div>
+					  <script>
+							document.write('<div class="row text-center">');
+							for(var i=0;i<4;i++){
+							document.write('<div class="col-sm-3">');
+							document.write('<a href="javascript:layer_popup(\'.popuplayer\');">');
+							document.write('<img src="example.jpg" alt="picture" class="img-responsive pic"><p>Gyeongpo-beach, The best beach I\'ve ever been</p></a>');
+							document.write('<div class="background"><div class="dimBackground" onClick=\'javascript:closelayer();\'></div>');
+							document.write('<div class="popuplayer"><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p>');
+							document.write('<img src="example.jpg"><p>예시 글과 사진</p><br><p>팝업레이어</p>팝업레이어<br>팝업레이어<br>팝업레이어<br>팝업레이어<br></p></div></div>');
+							document.write('</div>');
+							}
+							document.write('</div>');
+						</script>
 					</div>
 					  
 					
