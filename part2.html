@@ -15,7 +15,7 @@
 			function layer_popup(el){
 			  var $el = $(el);
 			  var isDim = $el.prev().hasClass('dimBackground');
-			  isDim ? $('.background').fadeIn(100) : $el.fadeIn();
+			  isDim ? $('.background').fadeIn(200) : $el.fadeIn();
 			  var $elWidth = ~~($el.outerWidth()), $elHeight = ~~($el.outerHeight()), docWidth = $(document).width(), docHeight = $(document).height();
 
 				if ($elHeight < docHeight || $elWidth < docWidth) {
@@ -28,7 +28,7 @@
 
 			function closelayer(){
 				var isDim = $(".popuplayer").prev().hasClass('dimBackground');
-				isDim ? $('.background').fadeOut(100) : $el.fadeOut();
+				isDim ? $('.background').fadeOut(200) : $el.fadeOut();
 				$("body").css("overflow-x","hidden");
 				
 			}
@@ -88,8 +88,8 @@
 				width:100%;
 				height:100%;
 				background:#000;
-				opacity: .1;
-				filter:alpha(opacity=10);
+				opacity: .5;
+				filter:alpha(opacity=50);
 			}
 
 			.background .popuplayer{
@@ -107,7 +107,9 @@
 				z-index:10;
 				color:#000;
 			}
-
+			.popuplayer img {
+				width: 50%;
+			}
 			.popuplayer::-webkit-scrollbar {	/*스크롤바 전체*/
 				width: 10px;
 			}
@@ -139,6 +141,11 @@
 			p {
 				margin-left: 30px;
 			}
+			.item{
+				padding-right: 100px;
+				padding-left: 80px;
+			}
+			
 		</style>
     </script>
 	</head>
@@ -160,7 +167,7 @@
 					  ['Gangwon <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
 					  ['Jeju <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
 					];
-
+					
 					var map = new google.maps.Map(document.getElementById('map'), {
 					  zoom: 7,
 					  center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
@@ -190,6 +197,39 @@
 						});
 						}
 					}
+					
+					function back(){
+						var map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 7,
+						  center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
+						  mapTypeId: google.maps.MapTypeId.ROADMAP
+						});
+						
+						var infowindow = new google.maps.InfoWindow();
+						var marker, i;
+						for (i = 0; i < locations.length; i++) {  
+						  marker = new google.maps.Marker({
+							id:i,
+							position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+							map: map
+						  });
+
+						  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+							return function() {
+							  infowindow.setContent(locations[i][0]);
+							  infowindow.open(map, marker);
+							}
+						  })(marker, i));
+
+						  if(marker){
+							marker.addListener('click', function() {
+							  map.setZoom(15);
+							  map.setCenter(this.getPosition());
+							});
+							}
+						}
+						
+					}
 
 				  </script>
 				  
@@ -208,76 +248,61 @@
 				</ol>
 				
 				
-				<div class="carousel-inner">	<!--이거인거같음-->
-					<div class="item active">
-					<!--
-						<div class="row text-center">
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>			
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>		
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>		
-							<div class="col-sm-3">
-								<a href="" target="_self">
-									<img src="example.jpg" alt="picture" class="img-responsive pic" >
-								</a>
-							</div>	
-						</div> -->
+				<div class="carousel-inner">	
+						<div class="item active">
 						<script>
 							document.write('<div class="row text-center">');
 							for(var i=0;i<4;i++){
 							document.write('<div class="col-sm-3">');
 							document.write('<a href="javascript:layer_popup(\'.popuplayer\');">');
 							document.write('<img src="example.jpg" alt="picture" class="img-responsive pic"><p>Gyeongpo-beach, The best beach I\'ve ever been</p></a>');
-							document.write('<div class="background"><div class="dimBackground" onClick=\'javascript:closelayer();\'></div>');
-							document.write('<div class="popuplayer"><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p>');
-							document.write('<img src="example.jpg"><p>예시 글과 사진</p><br><p>팝업레이어</p>팝업레이어<br>팝업레이어<br>팝업레이어<br>팝업레이어<br></p></div></div>');
+							//팝업 삭제 위치
 							document.write('</div>');
 							}
 							document.write('</div>');
 						</script>
-					</div>
-					<div class="item">
-					  <script>
-							document.write('<div class="row text-center">');
-							for(var i=0;i<4;i++){
-							document.write('<div class="col-sm-3">');
-							document.write('<a href="javascript:layer_popup(\'.popuplayer\');">');
-							document.write('<img src="example.jpg" alt="picture" class="img-responsive pic"><p>Gyeongpo-beach, The best beach I\'ve ever been</p></a>');
-							document.write('<div class="background"><div class="dimBackground" onClick=\'javascript:closelayer();\'></div>');
-							document.write('<div class="popuplayer"><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p>');
-							document.write('<img src="example.jpg"><p>예시 글과 사진</p><br><p>팝업레이어</p>팝업레이어<br>팝업레이어<br>팝업레이어<br>팝업레이어<br></p></div></div>');
-							document.write('</div>');
-							}
-							document.write('</div>');
-						</script>
-					</div>
-					  
+						</div>
+						
+						<div class="item">
+						  <script>
+								document.write('<div class="row text-center">');
+								for(var i=0;i<4;i++){
+								document.write('<div class="col-sm-3">');
+								document.write('<a href="javascript:layer_popup(\'.popuplayer\');">');
+								document.write('<img src="example.jpg" alt="picture" class="img-responsive pic"><p>Gyeongpo-beach, The best beach I\'ve ever been</p></a>');
+								///
+								document.write('</div>');
+								}
+								document.write('</div>');
+							</script>
+						
+						</div>
 					
+					
+					 
 					<!-- Left and right //안보이게 할까??-->
 					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="false"></span>
 					<span class="sr-only">Previous</span>
 					</a>
 					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="false"></span>
 					<span class="sr-only">Next</span>
 					</a>
 				</div>
 			</div>
+			<script>
+				document.write('<div class="background"><div class="dimBackground" onClick=\'javascript:closelayer();\'></div>');
+				document.write('<div class="popuplayer text-center"><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p><p>팝업레이어<br></p>');
+				document.write('<img src="example.jpg"><p>예시 글과 사진</p><br><p>팝업레이어</p>팝업레이어<br>팝업레이어<br>팝업레이어<br>팝업레이어<br></p></div></div>');
+			</script>
+			
+			<!--최신글로 이동하는 버튼-->
 			<div class="row text-center">
-				<div class="col-sm-12">
+				
+				<div class="col-sm-12">	 
 					<button class="btn btn-default pull-right" onClick="location.href='part2_recent.html'" type="submit">More</button>	<!--글자만 있는걸로 바꾸기-->
+					<button class="btn btn-default pull-right" onClick="back(); location.href='#map'" type="submit">Back</button>
 				</div>
 			</div>
 		
