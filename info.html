@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Enjoy travel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    #title {
+      background-color: inherit;
+      outline: none;
+      border: 0px;
+    }
+    .top {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .under {
+      display: inline;
+      margin-left: 20px;
+      padding: 5px;
+    }
+
+    .firstimage {
+      width: 100%;
+      height: 500px;
+    }
+
+    .secondimage {
+      width: 100%;
+      height: 300px;
+    }
+
+    .thirdimage {
+      width: 100%;
+      height: 700px;
+    }
+
+    .menubar {
+      text-align: center;
+    }
+
+    .menubutton {
+      background-color: white;
+      border-radius: 20px 20px 20px 20px;
+      margin-left: 50px;
+      margin-right : 50px;
+      font-size: 15px;
+      padding : 20px;
+    }
+
+    .menubutton:hover {
+      background-color: black;
+      color : white;
+    }
+    .bg-1 {
+      background-image: url("image.jpg");
+      background-size: 100% 600px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-2 {
+      background-image: url("image1.jpg");
+      background-size: 100% 500px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-3 {
+      background-image: url("image2.jpg");
+      background-size: 100% 500px;
+      background-repeat: no-repeat;
+    }
+  </style>
+
+  <script>
+  function map() {
+    window.open('part2.html');
+  }
+
+  function latest() {
+    window.open('part2/recent.html');
+  }
+
+  function recommend() {
+    window.open('part2.html');
+  }
+
+  function write() {
+    window.open('write.html');
+  }
+
+  function review() {
+    window.open('part2.html');
+  }
+
+  function alert() {
+    window.open('part2.html');
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid text-center">
+      <button type="button" id="title" href="#">
+        <img src="title.png">
+      </button>
+    </div>
+
+
+    <div class="container-fluid text-center">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search"></span> Search</a>
+          <ul class="dropdown-menu" style="width : 400px">
+            <form class="navbar-form navbar-left" action="search 결과 페이지!!!!">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search" style="width : 330px">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-heart"></span> Help</a>
+          <ul class="dropdown-menu" style="width : 700px">
+            <div class="col-sm-4">
+              <p><strong>contact</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Information</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Frequently asked questions</strong></p>
+              <p>zzzz</p>
+            </div>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> My account</a>
+          <ul class="dropdown-menu" style="width : 300px">
+            <p style="margin : 30px">Join or Login</p>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn">Join</button>
+            </div>
+            <div class="col-sm-3">
+              <button type="button" class="btn btn-primary">Login</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <br>
+  <div class="menubar">
+    <button type="button" class="menubutton" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
+    <button type="button" class="menubutton" onclick="latest()"><span class="glyphicon glyphicon-picture"></span> latest article</button>
+    <button type="button" class="menubutton" onclick="recommend()"><span class="glyphicon glyphicon-thumbs-up"></span> recommend</button>
+    <button type="button" class="menubutton"  onclick="write()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton"  onclick="review()"><span class="glyphicon glyphicon-tag"></span> REVIEW</button>
+    <button type="button" class="menubutton"  onclick="alert()"><span class="glyphicon glyphicon-eye-open"></span> Alerts</button>
+  </div>
+  <br>
+
+  <div class="container-fluid text-center">
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>수도권</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
+    </div>
+
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>강원도</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
+    </div>
+
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>충청도</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center row no-gutters">
+      <div class="col-sm-6" style="height : 500px">
+        <div class="bg-2">
+          <br>
+          <h1>경상도</h1>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="#" style="font-size : 20px; color:white">More</a>
+          <br><br>
+        </div>
+      </div>
+
+      <div class="col-sm-6" style="height : 500px">
+        <div class="bg-2">
+          <br>
+          <h1>전라도</h1>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="#" style="font-size : 20px; color:white">More</a>
+          <br><br>
+        </div>
+      </div>
+
+      <div class="container-fluid text-center row no-gutters">
+        <div class="col-sm-6" style="height : 500px">
+          <div class="bg-3">
+            <br>
+            <h1>제주도</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#" style="font-size : 20px; color:white">More</a>
+            <br><br>
+          </div>
+        </div>
+
+        <div class="col-sm-6" style="height : 500px">
+          <div class="bg-3">
+            <br>
+            <h1>무언가</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#" style="font-size : 20px; color:white">More</a>
+            <br><br>
+          </div>
+        </div>
+
+</body>
+
+</html>
