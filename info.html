@@ -14,7 +14,13 @@
       background-color: inherit;
       outline: none;
       border: 0px;
+      position: fixed;
     }
+
+    .titlediv {
+      z-index: 1;
+    }
+
     .top {
       text-align: center;
       padding-bottom: 20px;
@@ -49,15 +55,16 @@
       background-color: white;
       border-radius: 20px 20px 20px 20px;
       margin-left: 50px;
-      margin-right : 50px;
+      margin-right: 50px;
       font-size: 15px;
-      padding : 20px;
+      padding: 20px;
     }
 
     .menubutton:hover {
       background-color: black;
-      color : white;
+      color: white;
     }
+
     .bg-1 {
       background-image: url("image.jpg");
       background-size: 100% 600px;
@@ -75,67 +82,67 @@
       background-size: 100% 500px;
       background-repeat: no-repeat;
     }
-    .bg-4 {
-              
-                padding: 150px 150px 150px 150px;               
-    }
-    body {
-  font-family: Comic Sans MS
-}
-h1 {
-    font-size: 40px;
-}
 
-table{
-    font-size: 20px;
-    text-align: left;
- 
-}
-      
-    .footterstyle
-    {
+    .bg-4 {
+
+      padding: 150px 150px 150px 150px;
+    }
+
+    body {
+      font-family: Comic Sans MS
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .footterstyle {
       font-size: 30px;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    .td,th,tr{
-      font-size: 50px;
-     padding: 100px;
     }
   </style>
 
   <script>
-  function map() {
-    window.open('part2.html');
-  }
+    function map() {
+      window.open('part2.html');
+    }
 
-  function latest() {
-    window.open('part2/recent.html');
-  }
+    function latest() {
+      window.open('part2/recent.html');
+    }
 
-  function recommend() {
-    window.open('part2_recome.html');
-  }
+    function recommend() {
+      window.open('part2_recome.html');
+    }
 
-  function write1() {
-    window.open('jw.html');
-  }
+    function write1() {
+      window.open('jw.html');
+    }
 
-  function review() {
-    window.open('part2.html');
-  }
+    function review() {
+      window.open('part2.html');
+    }
 
-  function alert() {
-    window.open('part2.html');
-  }
+    function alert() {
+      window.open('part2.html');
+    }
   </script>
 </head>
 
 <body>
   <header>
     <div class="container-fluid text-center">
-      <button type="button" id="title" href="#">
+      <div class="titlediv" <button type="button" id="title" href="#">
         <img src="title.png">
-      </button>
+        </button>
+      </div>
     </div>
 
 
@@ -206,9 +213,9 @@ table{
     <button type="button" class="menubutton" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
     <button type="button" class="menubutton" onclick="latest()"><span class="glyphicon glyphicon-picture"></span> latest article</button>
     <button type="button" class="menubutton" onclick="recommend()"><span class="glyphicon glyphicon-thumbs-up"></span> recommend</button>
-    <button type="button" class="menubutton"  onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
-    <button type="button" class="menubutton"  onclick="review()"><span class="glyphicon glyphicon-tag"></span> REVIEW</button>
-    <button type="button" class="menubutton"  onclick="alert()"><span class="glyphicon glyphicon-eye-open"></span> Alerts</button>
+    <button type="button" class="menubutton" onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton" onclick="review()"><span class="glyphicon glyphicon-tag"></span> REVIEW</button>
+    <button type="button" class="menubutton" onclick="alert()"><span class="glyphicon glyphicon-eye-open"></span> Alerts</button>
   </div>
   <br>
 
@@ -284,39 +291,43 @@ table{
             <br><br>
           </div>
         </div>
-
-</body>
-
-<footer class="container-fluid bg-4 text-center">
-
-
-  <h1 style="text-align: center;color: rgb(46, 99, 245);">여행지 정보 공유 사이트</h1>
-  <br>
-  <table>
-    <tr>
-      <td><i class="fab fa-github-square"></i></td>
-      <td><i class="far fa-id-card"></i> </td>      
-      <td><i class="fas fa-graduation-cap"></i></td>      
-      <td>　　<i class="fab fa-instagram"></i></td>
-      <tr>
-        <td><a href="https://github.com/JaeWon1717">Park Jae won　</a></td>
-        <td>2017038054　　</td>
-        
-        <td>SoftWare</td>
-        <td>　　@jaewonpark_10　　</td>
-      </tr>
-      <td><a href="https://github.com/JungYeonHwi"> JungYeonHwi　</a></td>
-      <td>2018068020　　</td>
-     
-      <td>SoftWare</td>
-      <td>　　@no insta　　</td>
-    </tr>
-    <td><a href="https://github.com/yewon918"> yewon918　</a> </td>
-    <td>2018038032　　</td>
+      </div>
+    </body>
     
-    <td>SoftWare</td>
-    <td>　　@kimye_ohneulman_sanda　　</td>
-    </table>
-   ㅇㅇㅇㅇㅇㅇㅇ
-</footer>	
+      <footer class="container-fluid bg-4 text-center">
+        <h1 style="text-align: center;color: rgb(46, 99, 245);">여행지 정보 공유 사이트</h1>
+        <br><br>
+        <table>
+          <tr>
+            <td><span class="glyphicon glyphicon-fire"></span></td>
+            <td><span class="glyphicon glyphicon-user"></span></td>
+            <td><span class="glyphicon glyphicon-home"></span></td>
+            <td><span class="glyphicon glyphicon-star"></span></td>
+            <td><span class="glyphicon glyphicon-info-sign"></span></td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/JaeWon1717">https://github.com/JaeWon1717</td>
+            <td>Park Jae won</td>
+            <td>Computer Science</td>
+            <td>@jaewonpark_10</td>
+            <td>2017038054</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/JungYeonHwi">https://github.com/JungYeonHwi</td>
+            <td>Jung Yeon Hwi</td>
+            <td>Computer Science</td>
+            <td>@no insta</td>
+            <td>2018068020</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/yewon918">https://github.com/yewon918</td>
+            <td>Kim Ye Won</td>
+            <td>Computer Science</td>
+            <td>@kimye_ohneulman_sanda</td>
+            <td>2018038032</td>
+          </tr>
+        </table>
+
+      </footer>
+
 </html>
