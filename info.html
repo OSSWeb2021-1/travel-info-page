@@ -10,6 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
+    #title {
+      background-color: inherit;
+      outline: none;
+      border: 0px;
+    }
     .top {
       text-align: center;
       padding-bottom: 20px;
@@ -18,7 +23,7 @@
     .under {
       display: inline;
       margin-left: 20px;
-      padding:5px;
+      padding: 5px;
     }
 
     .firstimage {
@@ -36,21 +41,38 @@
       height: 700px;
     }
 
+    .menubar {
+      text-align: center;
+    }
+
+    .menubutton {
+      background-color: white;
+      border-radius: 20px 20px 20px 20px;
+      margin-left: 50px;
+      margin-right : 50px;
+      font-size: 15px;
+      padding : 20px;
+    }
+
+    .menubutton:hover {
+      background-color: black;
+      color : white;
+    }
     .bg-1 {
-      background-image: url("전라도.jpg");
+      background-image: url("image.jpg");
       background-size: 100% 600px;
       background-repeat: no-repeat;
     }
 
     .bg-2 {
-      background-image: url("강원.jpg");
+      background-image: url("image1.jpg");
       background-size: 100% 500px;
       background-repeat: no-repeat;
     }
 
     .bg-3 {
-      background-image: url("충청도.jpg");
-      background-size: 100% 400px;
+      background-image: url("image2.jpg");
+      background-size: 100% 500px;
       background-repeat: no-repeat;
     }
     .bg-4 {
@@ -82,49 +104,46 @@ table{
   </style>
 
   <script>
-    function fun() {
-      var con = documnet.getElementById("side");
-      if (con.style.display == 'none') {
-        con.style.display = 'block';
+  function map() {
+    window.open('part2.html');
+  }
 
-      } else {
-        con.style.display = 'none';
-      }
-    }  
-    function process() {   
-                alert('글을 작성합니다.');               
-                window.open('jw.html');      
-                    } 
+  function latest() {
+    window.open('part2/recent.html');
+  }
+
+  function recommend() {
+    window.open('part2_recome.html');
+  }
+
+  function write1() {
+    window.open('jw.html');
+  }
+
+  function review() {
+    window.open('part2.html');
+  }
+
+  function alert() {
+    window.open('part2.html');
+  }
   </script>
-  
 </head>
 
 <body>
   <header>
     <div class="container-fluid text-center">
-      <h1>Title</h1>
-     
-              
-     
+      <button type="button" id="title" href="#">
+        <img src="title.png">
+      </button>
     </div>
 
 
     <div class="container-fluid text-center">
       <div class="navbar-header">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">menu</button>
-          <ul class="dropdown-menu">
-            <li a href="#" class="top">지도</a></li>
-            <li a href="#" class="top">최신 글</a></li>
-            <li a href="#" class="top">관리자 추천</a></li>
-            <br><br>
-
-            
-            <li a href="#" class="under"><input type="submit" value="글쓰기" onclick="process()" style="width:100px;height:auto;"></a></li>
-            <br><br>
-            <li a href="#" class="under"><button type="button"style="width:100px;height:auto;">내가쓴글</button></a></li>
-          </ul>
-        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+        </ul>
       </div>
 
       <ul class="nav navbar-nav navbar-right">
@@ -180,53 +199,92 @@ table{
         </li>
       </ul>
     </div>
-    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
   </header>
 
+  <br>
+  <div class="menubar">
+    <button type="button" class="menubutton" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
+    <button type="button" class="menubutton" onclick="latest()"><span class="glyphicon glyphicon-picture"></span> latest article</button>
+    <button type="button" class="menubutton" onclick="recommend()"><span class="glyphicon glyphicon-thumbs-up"></span> recommend</button>
+    <button type="button" class="menubutton"  onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton"  onclick="review()"><span class="glyphicon glyphicon-tag"></span> REVIEW</button>
+    <button type="button" class="menubutton"  onclick="alert()"><span class="glyphicon glyphicon-eye-open"></span> Alerts</button>
+  </div>
+  <br>
+
   <div class="container-fluid text-center">
-    <div class="col-sm-12 bg-3" style="height : 400px">
-      <h1>제주도</h1>
-      
-     
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="#" style="font-size : 20px; color:white">More</a>
-    </div>
-    <div class="col-sm-4 bg-1" style="height : 600px">
-      <h1>수도권</h1>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="#" style="font-size : 20px; color:white">More</a>
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>서울</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
     </div>
 
-    <div class="col-sm-4 bg-1" style="height : 600px">
-      <h1>강원도</h1>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="#" style="font-size : 20px; color:white">More</a>
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>수도권</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
     </div>
 
-    <div class="col-sm-4 bg-1" style="height : 600px">
-      <h1>충청도</h1>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="#" style="font-size : 20px; color:white">More</a>
+    <div class="col-sm-4" style="height : 600px">
+      <div class="bg-1">
+        <br>
+        <h1>강원도</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+        <br><br>
+      </div>
     </div>
 
-    <div class="container-fluid text-center">
-      <div class="col-sm-6 bg-2" style="height : 500px">
-        <h1>경상도</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="#" style="font-size : 20px; color:white">More</a>
+    <div class="container-fluid text-center row no-gutters">
+      <div class="col-sm-6" style="height : 500px">
+        <div class="bg-2">
+          <br>
+          <h1>경상도</h1>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+          <br><br>
+        </div>
       </div>
 
-      <div class="col-sm-6 bg-2" style="height : 500px">
-        <h1>전라도</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="#" style="font-size : 20px; color:white">More</a>
+      <div class="col-sm-6" style="height : 500px">
+        <div class="bg-2">
+          <br>
+          <h1>전라도</h1>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+          <br><br>
+        </div>
       </div>
 
-      <div class="container-fluid text-center">
-        
+      <div class="container-fluid text-center row no-gutters">
+        <div class="col-sm-6" style="height : 500px">
+          <div class="bg-3">
+            <br>
+            <h1>제주도</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+            <br><br>
+          </div>
+        </div>
 
-        <div class="container-fluid text-center">
-         
+        <div class="col-sm-6" style="height : 500px">
+          <div class="bg-3">
+            <br>
+            <h1>충청도</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
+            <br><br>
+          </div>
+        </div>
+
 </body>
 
 <footer class="container-fluid bg-4 text-center">
@@ -259,6 +317,6 @@ table{
     <td>SoftWare</td>
     <td>　　@kimye_ohneulman_sanda　　</td>
     </table>
-   
+   ㅇㅇㅇㅇㅇㅇㅇ
 </footer>	
 </html>
