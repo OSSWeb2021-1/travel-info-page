@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Enjoy travel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+    #titlediv img {
+      display: block;
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      height: 150px;
+    }
+  .col-sm-2{
+    margin-top: 70px;
+  }
+  
+    .menubar {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .menubutton {
+      background-color: white;
+      border-radius: 20px 20px 20px 20px;
+
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .imagebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .matebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .menubutton:hover {
+      background-color: black;
+      color: white;
+    }
+
+
+    .bg-foot {
+      padding: 10px 10px 10px 10px;
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .conversion-section {
+    background-color: #FFFFFF;
+    margin-top: 25px;
+    padding: 25px 30px;
+}
+.conversion h3 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.conversion a.btn {
+    margin-top: 24px;
+}
+.btn-danger, .dropdown-toggle.btn-danger {
+    background-color: #ff5722;
+}
+.btn-danger:hover {
+    background-color: #ff5722;
+}
+
+#footer {  
+    background: rgb(207, 162, 162);    
+    margin-bottom: -500px;
+}
+#footer strong {
+    color: #000;
+}
+.strong, b, strong {
+    color: #000;
+    font-weight: 500;
+}
+#footer a {
+    color: #000;
+}
+.places {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.places li {
+    float: left;
+}
+.place {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 0 20px 0 23px;
+    height: 26px;
+    border-radius: 3px 0 0 3px;
+    background: #F3F3F3;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 26px;
+   
+}
+.place::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #EFF1F5; 
+    background: #fff;
+    content: '';  
+}
+    #title {
+      border: 0px;
+      outline: none;
+      background-color: black;
+
+      position: fixed;
+      z-index: 1;
+    }
+
+    .titlediv {
+      position: fixed;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+
+    body {
+      font-family: Comic Sans MS
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 40px;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .bgmate-2 {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    #travelmate_title {
+      text-align: center;
+      margin-top: 120px;
+      margin-bottom: 30px;
+    }
+
+    .mateimage {
+      text-align: center;
+      width: 100%;
+    }
+
+    .mtitle {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .mcontent {
+      text-align: center;
+    }
+
+    .matebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function mate_more1() {
+      window.open('mate_more.html');
+    }
+
+    function InMouseMate(b) {
+      b.style.border = "2px solid red";
+    }
+
+    function OutMouseMate(b) {
+      b.style.border = "";
+    }
+  </script>
+</head>
+
+<body>
+    <header>
+        <div id="titlediv">
+          <img src="titleblue2.jpg">
+      </div>
+        <div class="container-fluid text-center bg">
+          <div class="navbar-header">
+            <ul class="nav navbar-nav">
+              <li><a href="info.html">Home</a></li>
+           
+            </ul>
+          </div>
+        
+          </ul>
+        </div>
+      </header>
+
+  
+  <div class="container-fluid bgmate-2">
+
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <button type="button" class="matebutton" id="mate1button" onclick="mate_more1()">
+          <p class="mateimage"><img src="1.jpg" width="100%" height="300px"></p>
+          <p class="mtitle"><strong>I want a pleasant trip with you.</strong></p>
+          <P class="mcontent">Rich and relaxed together.</p>
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="2.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>With a happy Ryn.</strong></p>
+        <P class="mcontent">Let's make it together!!</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="3.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>It's the best place to eat.</strong></p>
+        <P class="mcontent">I like eating the most.</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="4.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I'm the best photigrapher.</strong></p>
+        <P class="mcontent">I'm the best in high quality pictures!!!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgmate-2">
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="5.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I can't wait to travel.</strong></p>
+        <P class="mcontent">Even more with you~~~</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="6.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>There's nothing special about happy trips.</strong></p>
+        <P class="mcontent">I'm making it with you.</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="7.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I have a lot of friends.</strong></p>
+        <P class="mcontent">Aren’t you curious?</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="8.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I'll make sure you don't feel lonely.</strong></p>
+        <P class="mcontent">Because I'm a really funny person.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgmate-2">
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="9.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>With a true traveler.</strong></p>
+        <P class="mcontent">Let's spend time together!!</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="10.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I have a happy virus.</strong></p>
+        <P class="mcontent">Hang out with me~~~!!</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="11.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I've got a lot of stamina.</strong></p>
+        <P class="mcontent">Don't sleep. Let's talk!!!!</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="12.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I like traveling.</strong></p>
+        <P class="mcontent">Even more with you. I want you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bgmate-2">
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="13.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>Would you like a cup of coffee?</strong></p>
+        <P class="mcontent">Let's Go!!!!</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="14.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I grew up with a lot of love.</strong></p>
+        <P class="mcontent">I want to share with you~</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="15.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>Traveling is a great experience for me.</strong></p>
+        <P class="mcontent">Meeting you is also a big experience.</p>
+      </div>
+    </div>
+    <div class="col-sm-3" style="height : 400px">
+      <div onmouseover="InMouseMate(this)" onmouseout="OutMouseMate(this)">
+        <p class="mateimage"><img src="16.jpg" width="100%" height="300px"></p>
+        <p class="mtitle"><strong>I'm not strange person.</strong></p>
+        <P class="mcontent">I'm rather a funny person.</p>
+      </div>
+    </div>
+  </div>
+  <footer id="footer">
+    <div class="container">
+      <div class="col-sm-4">
+        <img src="webmap.png" alt="#" class="img-responsive logo">
+        <p style="margin: 0 0 1.75em;">
+          2021 Software Department Web Project.
+        </p>
+      </div>
+      <div class="col-sm-4" style="padding-top: 70px;">
+        <h5>
+          Popular tags
+        </h5>
+        <ul class="places">
+          <li>
+            <a href="#" class="place">
+              Vacation
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+             Seoul
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+            Sally
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              JeJu
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+             Trip
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              healing
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Europe
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Island
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          CATEGORIES
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Map </a> </li>
+          <li> <a href="#"> Last article </a> </li>
+          <li> <a href="#"> recommend </a> </li>
+          <li> <a href="#"> mate  </a> </li>
+      
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          ABOUT US
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Park Jaewon </a> </li>
+          <li> <a href="#"> Kim Yewon </a> </li>
+          <li> <a href="#"> JungYeonHwi </a> </li>
+        </ul>
+      </div>
+
+        
+    
+    </div>
+    <div class="footerbottom">
+      <div class="container">
+      
+          <p>
+            <strong>
+              Copyright 2021
+            </strong>
+           Jaewon,YeonHwi,Yewon
+            <strong>
+              by LuckySeven
+            </strong>
+          </p>
+       
+      
+      </div>
+    </div>
+  </footer>
+</html>

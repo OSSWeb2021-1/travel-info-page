@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>vote</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+  <script>
+    function gopage(){
+      location.href="firstpage.html";
+    }
+    var arrName = ["Seoul","chungcheong","Gangwon","chungcheong",
+            "Jeju","Jeonla","Dokdo","other"];
+    
+    var arrPrice = new Array("Click","Click","Click","Click","Click","Click","Click","Click");
+    var total=0;				
+    var click=[];
+    for(var i=0;i<7;i++){
+      click[i]=0;
+    }
+    function choice(num) {
+      
+      if(click[num]==0) {
+        click[num]=1;
+        document.getElementsByClassName('Img1')[num].src="sel.png";			
+        document.getElementsByClassName('inner')[num].style.backgroundColor = "white";
+        total+=parseInt(arrPrice[num]);
+        
+      }else {
+        click[num] = 0;
+        document.getElementsByClassName('Img1')[num].src="e"+num+".jpg";
+        document.getElementsByClassName('inner')[num].style.backgroundColor = "white";
+        total-=parseInt(arrPrice[num]);
+      }
+    }
+    
+    function VOTE(){
+    var list=[];
+    var message="";
+   
+    
+      if(total==0){
+        alert("Please select item!");
+      }
+      else{
+        for(var i=0;i<7;i++){
+          if(click[i]==1){	//선택되었다면
+            message+=arrName[i]+" ";
+          }
+        }
+        message += "is(are) selected!";
+        alert(message+"\n\n"+"Succes VOTE!"+"");
+        window.open('vote_result.html');
+      }
+    }
+  </script>
+
+  <style>
+    
+    #votebtn
+    {
+      margin-top: 30px;
+      margin-left: 50%;
+    }
+			.menu {
+                text-align: center;
+				border-top: 2px dotted rgb(241, 239, 239);
+				border-bottom: 2px dotted red;
+                padding: 10px;
+            }
+			.menu li {
+                display: inline;
+                padding: 20px;
+				padding-left:50px;
+            }
+            .menu li a {
+                text-decoration: none;
+				color: black;
+				font-weight:bold;
+            }
+            .menu li a:hover {
+                color: red;
+            }
+			.inner{
+				border: 3px solid grey;
+				padding-bottom:8px;
+				text-align:center;
+				margin-left:-7px;
+				margin-right:-7px;
+				margin-top:-5px;
+				margin-bottom:10px;
+			}
+			.inner:hover {
+				border: 8px solid rgb(176, 160, 248);
+			}
+			.con_item{
+				margin-left: 300px;
+				margin-right: 300px;
+				padding:0px;
+			}
+			.Img1{
+				width:150px;
+				height:150px;
+				padding:0px;
+			}
+			p{
+				margin-left:-6px;
+				margin-bottom:4px;
+			}
+			h4{
+				font-weight:700;
+				margin-left:-7px;
+				padding-bottom: 10px;
+			}
+		
+			#topdown{
+				position: fixed;
+				bottom:40px;
+				left:1150px;
+			}
+			.topd, .down{
+				color: red;
+				background-color:cyan;
+				width:80px;
+				height:50px;
+				border:1px solid white;
+				text-align:center;
+				padding-left:6px;
+				padding-top:15px;
+			}
+			div a p{
+				color:red;
+				text-decoration: none;
+			}
+			div a:hover{
+				text-decoration: none;
+			}
+			.head{
+				padding-top:40px;
+				color:white;
+			}
+			.navbar-brand {
+				font-size: 25px;
+				font-weight: bold;
+				padding-left:50px;
+			}
+			.navbar-right {
+				padding-right:150px;
+				font-weight: bold;
+			}
+      #titlediv img {
+      display: block;
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      height: 150px;
+    }
+  .col-sm-2{
+    margin-top: 70px;
+  }
+  
+    .menubar {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .menubutton {
+      background-color: white;
+      border-radius: 20px 20px 20px 20px;
+
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .imagebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .matebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .menubutton:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .bg {
+      width: 100%;
+      background-color: inherit;
+      z-index: 1;
+    }
+
+    body {
+      font-family: Comic Sans MS;
+      background-color: #F8F5ED;
+    }
+
+    .bg-foot {
+      padding: 10px 10px 10px 10px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .conversion-section {
+    background-color: #FFFFFF;
+    margin-top: 25px;
+    padding: 25px 30px;
+}
+.conversion h3 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.conversion a.btn {
+    margin-top: 24px;
+}
+.btn-danger, .dropdown-toggle.btn-danger {
+    background-color: #ff5722;
+}
+.btn-danger:hover {
+    background-color: #ff5722;
+}
+
+
+  #footer {
+      z-index: 1;
+      background-color: #C8E7F5;
+      margin-bottom: -500px;
+    }
+
+
+p {
+    margin: 0 0 1.75em;
+}
+
+#footer strong {
+    color: #000;
+}
+.strong, b, strong {
+    color: #000;
+    font-weight: 500;
+}
+#footer a {
+    color: #000;
+}
+.places {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.places li {
+    float: left;
+}
+.place {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 0 20px 0 23px;
+    height: 26px;
+    border-radius: 3px 0 0 3px;
+    background: #F3F3F3;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 26px;
+   
+}
+.place::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #EFF1F5; 
+    background: #fff;
+    content: '';
+  
+}
+
+
+  </style>
+
+  <script>
+    function map() {
+      window.open('part2.html');
+    }
+
+    function latest() {
+      window.open('part2_recent.html');
+    }
+
+    function recommend() {
+      window.open('part2_recome.html');
+    }
+
+    function write1() {
+      window.open('jw.html');
+    }
+
+    function review() {
+      window.open('part2.html');
+    }
+
+    function alert1() {
+      window.open('part2.html');
+    }
+
+    function mate() {
+      window.open('mate.html');
+    }
+  
+</script>
+</head>
+
+<body>
+  <header>
+    <div id="titlediv">
+      <img src="titleblue2.jpg">
+  </div>
+
+    <div class="container-fluid text-center bg">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><a href="info.html">Home</a></li>
+        </ul>
+      </div>
+        </div>
+     
+  </header>
+
+  <br><br>
+  
+
+  <br>
+  <div class="container-fluid con_item">
+  <h4>Voting for popular areas</h4>
+    <script>
+      
+      document.write('<div class="row">');
+        for(var i=0;i<4;i++) {
+          document.write('<div class="col-sm-3"><p>'+(i+1)+'</p><div class="inner" id="'+i+'" onclick="choice(this.id)">');
+          document.write('<img class="Img1" src="e'+i+'.jpg"/><br><br>');
+          document.write(arrName[i]+'<br><br>');
+          document.write(arrPrice[i]+' '+'</div></div>');
+        }
+      document.write('</div>');
+      document.write('<div class="row">');
+        for(var i=4;i<8;i++) {
+          document.write('<div class="col-sm-3"><p>'+(i+1)+'</p><div class="inner" id="'+i+'" onclick="choice(this.id)">');
+          document.write('<img class="Img1" src="e'+i+'.jpg"/><br><br>');
+          document.write(arrName[i]+'<br><br>');
+          document.write(arrPrice[i]+' '+'</div></div>');
+        }
+      document.write('</div>');
+    
+    </script>
+    <div id="votebtn">
+    <button onclick="VOTE()">VOTE</button>
+  </div>
+    </div>
+  </div>
+  
+  <br>  <br> <br> <br> <br> <br> <br>
+  </body>
+  
+<footer id="footer">
+    <div class="container" >
+      <div class="col-sm-4">
+        <img src="webmap.png" alt="#" class="img-responsive logo">
+        <p>
+          2021 Software Department Web Project.
+        </p>
+      </div>
+      <div class="col-sm-4" style="padding-top: 70px;">
+        <h5>
+          Popular tags
+        </h5>
+        <ul class="places">
+          <li>
+            <a href="#" class="place">
+              Vacation
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+             Seoul
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+            Sally
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              JeJu
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+             Trip
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              healing
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Europe
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Island
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          CATEGORIES
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Map </a> </li>
+          <li> <a href="#"> Last article </a> </li>
+          <li> <a href="#"> recommend </a> </li>
+          <li> <a href="#"> mate  </a> </li>
+      
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          ABOUT US
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Park Jaewon </a> </li>
+          <li> <a href="#"> Kim Yewon </a> </li>
+          <li> <a href="#"> JungYeonHwi </a> </li>
+        </ul>
+      </div>
+
+        
+    
+    </div>
+    <div class="footerbottom">
+      <div class="container">
+      
+          <p>
+            <strong>
+              Copyright 2021
+            </strong>
+           Jaewon,YeonHwi,Yewon
+            <strong>
+              by LuckySeven
+            </strong>
+          </p>
+       
+      
+      </div>
+    </div>
+  </footer>
+</html>

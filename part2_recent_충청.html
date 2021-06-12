@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>recent chungcheong</title>
+<link rel="stylesheet" href="reset.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="part2_recent_css.css">
+</head>
+<header>
+<div id="titlediv">
+<img class="titleimg" src="titleblue2.jpg">
+</div>
+<div class="container-fluid text-center bg">
+<div class="navbar-header">
+<ul class="nav navbar-nav">
+<li><a href="info.html">Home</a></li>
+
+</ul>
+</div>
+</div>
+</header>
+
+
+<br>
+<br><br><br><br><br>
+
+
+<!-- <hr style="border: solid 2px black;"> -->
+<body style="margin:0 auto;">
+
+<div class="container-fluid total_articles">
+
+<script>
+var ment = [
+"",
+"Hanriver is so beautiful",
+"Gwanghwamun, the door for the palace",
+"Gyeonghuiru. A pond in a palace!",
+"Myungdong has so many shopping centers",
+"Myungdong has so many shopping centers"
+];
+
+for (var i = 1; i < 5; i++) {
+document.write('<div class="total">');
+document.write('<div class="col-sm-3" style="height : 300px"> <div class="each_pic">');
+document.write('<img src="cc' + (i - 1) + '.jpg" alt="picture" class="img-responsive pic" id="o' + i + '" onClick="clicking(id);"><p>' + ment[i] + '</p>');
+document.write('</div></div></div>');
+}
+</script>
+
+
+<div id="popup1" style="text-align: center">
+    <div>
+      <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+      <p>This is cheonjanghochulleongdali</p>
+      <p>Cheongyang's representative tourist attraction 'Cheongjangho Suspension Bridge's</p>
+      <img src="cc01.JPG">
+      <p>Parks and walking trails while walking up to the suspension bridge</p>
+      <p>It's beautifully designed, so it's easy to enjoy.</p>
+      <p>One of the best tourist spots because there is no parking fee or entrance fee.</p>
+      <p>※ Because there are many stone roads, we recommend wearing comfortable shoes!</p>
+      <p>♥</p>
+      <br><br>
+
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+      </button>
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+      </button>
+    </div>
+  </div>
+
+  <div id="popup2" style="text-align: center">
+    <div>
+      <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+      <p>This is The best Jangseung culture in Korea</p>
+      <img src="cc11.jpg">
+      <p>The second place to visit in Cheongyang, Chilgapsan Jangseung Park</p>
+      <p>It is said that the origin of Jangseung comes from ancient Sotdae and Seondol.</p>
+      <p>It is said that it was called Jangseung in the Joseon Dynasty.</p>
+      <p><b>Residents use Jangseung as a boundary between regions</b></p>
+      <p>It is said that he was considered the guardian deity of the village.</p>
+      
+      <br><br>
+
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+      </button>
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+      </button>
+    </div>
+  </div>
+
+  <div id="popup3" style="text-align: center">
+    <div>
+      <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+      <p>It is a temple known to have been founded by Chejing during the Shilla period.</p>
+      <img src="cc21.JPG">
+      <p>It is located at the western foot of Chilgapsan Mountain, so it is very quiet.</p>
+      <p>Janggoksa Temple is also famous as a temple with two Daeungjeon.</p>
+      <p>The temples located on the sloped terrain have Daesangungjeon and Hadaeungjeon.</p>
+      
+      <br><br>
+
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+      </button>
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+      </button>
+    </div>
+  </div>
+  <div id="popup4" style="text-align: center">
+    <div>
+      <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+      <p>99 valleys under Chilgapsan Provincial Park, Naengcheon Gyecok, Ganggamchan Valley, etc.</p>
+      <img src="cc31.JPG">
+      <p>It is a recreational forest with pine forests in harmony.</p>
+      <p>There are various facilities such as log cabins, training centers, hanoks, and huts.</p>
+      <p>You can breathe the fresh air in the mountains.</p>
+      <p><b>How good it was- I definitely recommend this place to stay in Cheongyang!</b></p>
+     
+      <br><br>
+
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+      </button>
+      <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+      </button>
+    </div>
+  </div>
+
+
+<div id="popup5" style="text-align: center">
+<div>
+<!--팝업 내부-->
+<button id="c5" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+<p>This is Myungdong.</p><br><br>
+<p>This is one of my favorite spot in Seoul.</p>
+<p>As you can see in the picture,</p>
+<p>It's SO ENERGETIC</p>
+<img class="cimg" src="seoul6.jpg">
+<p>There are many shopping places</p>
+<p>I'm sure</p>
+<p>Everyone will</p>
+<p><b>love</b></p>
+<p>This place</p>
+<p>♥</p>
+<br><br>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+
+</div>
+</div>
+
+</div> <!-- container-fluid -->
+
+<div class="row text-center">
+<div class="col-sm-12">
+<button class="btn btn-default" onClick="location.href='part2_충청.html'" type="submit">Back</button>
+<br><br><br>
+<!--글자만 있는걸로 바꾸기-->
+</div>
+</div>
+<script type="text/javascript" src="part2_recent.js"></script>
+</body>
+<footer id="footer">
+<div class="container">
+<div class="col-sm-4">
+<img src="webmap.png" alt="#" class="img-responsive logo">
+<p>
+2021 Software Department Web Project.
+</p>
+</div>
+<div class="col-sm-4" style="padding-top: 70px;">
+<h5>
+Popular tags
+</h5>
+<ul class="places">
+<li>
+<a href="#" class="place">
+Vacation
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Seoul
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Sally
+</a>
+</li>
+<li>
+<a href="#" class="place">
+JeJu
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Trip
+</a>
+</li>
+<li>
+<a href="#" class="place">
+healing
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Europe
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Island
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+CATEGORIES
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Map </a> </li>
+<li> <a href="#"> Last article </a> </li>
+<li> <a href="#"> recommend </a> </li>
+<li> <a href="#"> mate  </a> </li>
+
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+ABOUT US
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Park Jaewon </a> </li>
+<li> <a href="#"> Kim Yewon </a> </li>
+<li> <a href="#"> JungYeonHwi </a> </li>
+</ul>
+</div>
+
+
+</div>
+<div class="footerbottom">
+<div class="container">
+
+<p>
+<strong>
+Copyright 2021
+</strong>
+Jaewon,YeonHwi,Yewon
+<strong>
+by LuckySeven
+</strong>
+</p>
+
+
+</div>
+</div>
+</footer>
+
+
+
+</html>

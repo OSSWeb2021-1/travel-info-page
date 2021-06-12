@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Enjoy travel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    #titlediv img {
+      display: block;
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      height: 150px;
+    }
+
+    .col-sm-2 {
+      margin-top: 70px;
+    }
+
+    .menubar {
+      text-align: center;
+    }
+
+    .menubutton {
+      background-color: white;
+      border-radius: 20px 20px 20px 20px;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+      transition: all 300ms linear;
+    }
+
+    .imagebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px;
+    }
+
+    .charbutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px;
+    }
+
+    .matebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .bg {
+      width: 100%;
+      background-color: inherit;
+      z-index: 1;
+    }
+
+    body {
+      font-family: Comic Sans MS;
+      background-color: #F8F5ED;
+    }
+
+
+    .bg-foot {
+      padding: 10px 10px 10px 10px;
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .conversion-section {
+      background-color: #FFFFFF;
+      margin-top: 25px;
+      padding: 25px 30px;
+    }
+
+    .conversion h3 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .conversion a.btn {
+      margin-top: 24px;
+    }
+
+    .btn-danger,
+    .dropdown-toggle.btn-danger {
+      background-color: #ff5722;
+    }
+
+    .btn-danger:hover {
+      background-color: #ff5722;
+    }
+
+    #footer {
+      z-index: 1;
+      background-color: #C8E7F5;
+      margin-bottom: -500px;
+    }
+
+    p {
+      margin: 0 0 1.75em;
+    }
+
+    #footer strong {
+      color: #000;
+    }
+
+    .strong,
+    b,
+    strong {
+      color: #000;
+      font-weight: 500;
+    }
+
+    #footer a {
+      color: #000;
+    }
+
+    .places {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .places li {
+      float: left;
+    }
+
+    .place {
+      position: relative;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      padding: 0 20px 0 23px;
+      height: 26px;
+      border-radius: 3px 0 0 3px;
+      background: #F3F3F3;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 26px;
+
+    }
+
+    .place::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 10px solid #EFF1F5;
+      background: #fff;
+      content: '';
+
+    }
+
+    .mapclass {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .bg-METROPOLITAN {
+      background-image: url("sudogwon.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-GANGWON {
+      background-image: url("gangwondo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-CHUNGCHEONG {
+      background-image: url("chungcheongdo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-GYEONGSANG {
+      background-image: url("gyeongsangdo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-JEONLA {
+      background-image: url("jeonlado.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-JEJU {
+      background-image: url("jeju.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-1 {
+      background-image: url("1.jpg");
+      background-size: 100% 365px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-2 {
+      background-image: url("2.jpg");
+      background-size: 100% 365px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-3 {
+      background-image: url("3.jpg");
+      background-size: 100% 365px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-4 {
+      background-image: url("4.jpg");
+      background-size: 100% 365px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-foot {
+      padding: 150px 150px 150px 150px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .mateclass {
+      background-image: url("warm.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .signup1
+    {
+        margin-left: 100px;
+        background-color: rgb(255, 255, 255);
+    }
+    .login
+    {
+        margin-left: 30px;
+        background-color: rgb(255, 255, 255);
+    }
+  </style>
+
+  <script>
+    function onmap() {
+      document.getElementById('mapbutton').style.backgroundColor = "black";
+      document.getElementById('mapbutton').style.color = "white";
+      document.getElementById('mapbutton').style.border = "10px solid black"
+    }
+
+    function outmap() {
+      document.getElementById("mapbutton").style.backgroundColor = "white";
+      document.getElementById("mapbutton").style.color = "black";
+      document.getElementById('mapbutton').style.border = "2px solid black"
+    }
+
+    function oncontact() {
+      document.getElementById('contactbutton').style.backgroundColor = "black";
+      document.getElementById('contactbutton').style.color = "white";
+      document.getElementById('contactbutton').style.border = "10px solid black"
+    }
+
+    function outcontact() {
+      document.getElementById("contactbutton").style.backgroundColor = "white";
+      document.getElementById("contactbutton").style.color = "black";
+      document.getElementById('contactbutton').style.border = "2px solid black"
+    }
+
+    function onwrite() {
+      document.getElementById('writebutton').style.backgroundColor = "black";
+      document.getElementById('writebutton').style.color = "white";
+      document.getElementById('writebutton').style.border = "10px solid black"
+    }
+
+    function outwrite() {
+      document.getElementById("writebutton").style.backgroundColor = "white";
+      document.getElementById("writebutton").style.color = "black";
+      document.getElementById('writebutton').style.border = "2px solid black"
+    }
+
+    function onvote() {
+      document.getElementById('votebutton').style.backgroundColor = "black";
+      document.getElementById('votebutton').style.color = "white";
+      document.getElementById('votebutton').style.border = "10px solid black"
+    }
+
+    function outvote() {
+      document.getElementById("votebutton").style.backgroundColor = "white";
+      document.getElementById("votebutton").style.color = "black";
+      document.getElementById('votebutton').style.border = "2px solid black"
+    }
+
+    function onmate() {
+      document.getElementById('matebutton').style.backgroundColor = "black";
+      document.getElementById('matebutton').style.color = "white";
+      document.getElementById('matebutton').style.border = "10px solid black"
+    }
+
+    function outmate() {
+      document.getElementById("matebutton").style.backgroundColor = "white";
+      document.getElementById("matebutton").style.color = "black";
+      document.getElementById('matebutton').style.border = "2px solid black"
+    }
+
+    function onimage(b) {
+      b.style.border = "10px solid white";
+      b.style.opacity = 0.5;
+    }
+
+    function outimage(b) {
+      b.style.border = "";
+      b.style.opacity = 1;
+    }
+
+
+    function map() {
+      window.open('part2.html');
+    }
+
+    function latest() {
+      window.open('part2_recent.html');
+    }
+
+    function contact() {
+      window.open('contact.html');
+    }
+
+    function write1() {
+      window.open('jw.html');
+    }
+
+    function vote() {
+      window.open('vote.html');
+    }
+
+    function mate() {
+      window.open('mate.html');
+    }
+    function process() {
+        const str1='jae';
+        const str2='123';
+
+    var id1 = document.getElementById("id1");
+    var pass1 = document.getElementById("pass1");
+    if(id1.value==str1 && pass1.value==str2)
+    {
+        alert('환영합니다');
+        window.open('info1.html');
+    }
+    else
+    {
+    alert('아이디,비밀번호를 다시확인해주세요')
+    };
+            }
+
+            function signup1() {
+      window.open('new_main.html');
+    }
+
+
+
+    var arrname = ["METROPOLITAN", "GANGWON", "CHUNGCHEONG", "GYEONGSANG", "JEONLA", "JEJU"];
+    var arrmate = ["Sally", "Ryn", "Mike", "Min"];
+  </script>
+</head>
+
+<body>
+  <header>
+    <div id="titlediv">
+      <img src="titleblue2.jpg">
+    </div>
+
+    <div class="container-fluid text-center bg">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><a href="info.html">Home</a></li>
+        </ul>
+      </div>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search"></span> Search</a>
+          <ul class="dropdown-menu" style="width : 400px">
+            <form class="navbar-form navbar-left" action="search 결과 페이지!!!!">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search" style="width : 330px">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-heart"></span> Help</a>
+          <ul class="dropdown-menu" style="width : 700px">
+            <div class="col-sm-4">
+              <p><strong>contact</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Information</strong></p>
+              <p>01012345678</p>
+            </div>
+            <div class="col-sm-4">
+              <p><strong>Frequently asked questions</strong></p>
+              <p>Hi</p>
+            </div>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> LOGIN</a>
+          <ul class="dropdown-menu" style="width : 300px">
+            <form name="myform">
+              ID</p><input type="text" id="id1"><br>
+              PASS</p><input type="password" id="pass1"><br><br>
+              <input type="submit" value="LOGIN" onclick="process()" class="login">
+              <input type="submit" value="Sign Up" onclick="signup1()"class="signup1">
+            </form>
+          </ul>
+        </li>
+
+
+      </ul>
+    </div>
+  </header>
+
+
+  <br>
+  <div class="menubar">
+    <button type="button" class="menubutton" id="mapbutton" onmouseover="onmap()" onmouseout="outmap()" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
+    <button type="button" class="menubutton" id="matebutton" onmouseover="onmate()" onmouseout="outmate()" onclick="mate()"><span class="glyphicon glyphicon-hand-right"></span> MATE <span class="glyphicon glyphicon-hand-left"></span></button>
+    <button type="button" class="menubutton" id="votebutton" onmouseover="onvote()" onmouseout="outvote()" onclick="vote()"><span class="glyphicon glyphicon-inbox"></span> VOTE</button>
+    <button type="button" class="menubutton" id="writebutton" onmouseover="onwrite()" onmouseout="outwrite()" onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton" id="contactbutton" onmouseover="oncontact()" onmouseout="outcontact()" onclick="contact()"><span class="glyphicon glyphicon-flash"></span> CONTACT</button>
+  </div>
+  <br>
+
+  <div class="mapclass">
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+        for (var i = 0; i < 3; i++) {
+          document.write('<div class="col-sm-4">');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="charbutton" id="charb" onclick="latest()"');
+          document.write('<p>'+arrname[i]+'</p>');
+          document.write('</button>');
+          document.write('</div>');
+          document.write('</div>');
+        }
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+
+  <div class="blankclass">
+    <div class="container-fluid">
+      <script>
+        for (var i = 0; i < 1; i++) {
+          document.write('<br>');
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="mapclass">
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+        for (var i = 3; i < 6; i++) {
+          document.write('<div class="col-sm-4">');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="charbutton" id="charb" onclick="latest()"');
+          document.write('<p>'+arrname[i]+'</p>');
+          document.write('</button>');
+          document.write('</div>');
+          document.write('</div>');
+        }
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+  <div class="blankclass">
+    <div class="container-fluid">
+      <script>
+        for (var i = 0; i < 1; i++) {
+          document.write('<br>');
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="mateclass">
+    <div class="container-fluid text-center">
+      <div class="col-sm-12">
+        <h1>Who will be your best Travel Mate?</h1>
+        <button type="button" class="imagebutton" onclick="Mate()">more</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+
+        for (var i = 0; i < 4; i++) {
+          document.write('<div class="col-sm-3">');
+          document.write('<div class="bg-' + (i + 1) + '">');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="matebutton" onclick="mate()">' + arrmate[i] + '</button>');
+          document.write('</div></div>');
+        }
+
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="col-sm-4">
+        <img src="webmap.png" alt="#" class="img-responsive logo">
+        <p>
+          2021 Software Department Web Project.
+        </p>
+      </div>
+      <div class="col-sm-4" style="padding-top: 70px;">
+        <h5>
+          Popular tags
+        </h5>
+        <ul class="places">
+          <li>
+            <a href="#" class="place">
+              Vacation
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Seoul
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Sally
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              JeJu
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Trip
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              healing
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Europe
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Island
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          CATEGORIES
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Map </a> </li>
+          <li> <a href="#"> Last article </a> </li>
+          <li> <a href="#"> recommend </a> </li>
+          <li> <a href="#"> mate </a> </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          ABOUT US
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Park Jaewon </a> </li>
+          <li> <a href="#"> Kim Yewon </a> </li>
+          <li> <a href="#"> JungYeonHwi </a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerbottom">
+      <div class="container">
+
+        <p>
+          <strong>
+            Copyright 2021
+          </strong>
+          Jaewon,YeonHwi,Yewon
+          <strong>
+            by LuckySeven
+          </strong>
+        </p>
+
+
+      </div>
+    </div>
+  </footer>
+
+</html>
