@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<link rel="stylesheet" href="reset.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="part2_recent_css.css">
+</head>
+<header>
+<div id="titlediv">
+<img class="titleimg" src="titleblue2.jpg">
+</div>
+<div class="container-fluid text-center bg">
+<div class="navbar-header">
+<ul class="nav navbar-nav">
+<li><a href="info.html">Home</a></li>
+
+</ul>
+</div>
+</div>
+</header>
+
+
+<br>
+<br><br><br><br><br>
+
+
+<!-- <hr style="border: solid 2px black;"> -->
+<body style="margin:0 auto;">
+
+<div class="container-fluid total_articles">
+
+<script>
+var ment = [
+"",
+"Chodang_ Town smells sweet",
+"Mt Seolak!",
+"Rail Bike, your legs will be strong",
+"Deep Blue Sea, Donghae",
+"Gwongeumseong, Sokcho",
+"Working on river"
+];
+
+for (var i = 1; i < 7; i++) {
+document.write('<div class="total">');
+document.write('<div class="col-sm-3" style="height : 300px"> <div class="each_pic">');
+document.write('<img src="gangwon' + i + '.jpg" alt="picture" class="img-responsive pic" id="o' + i + '" onClick="clicking(id);"><p>' + ment[i] + '</p>');
+document.write('</div></div></div>');
+}
+</script>
+
+
+<div id="popup1" style="text-align: center">
+
+<div>
+<button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+<p>Gangneung Chodang Tofu Village was established to commemorate the production of Chodang Tofu for 400 years.</p>
+<p>If you go to Chodang Tofu Village, there are Chodang Tofu restaurants and ice cream stores.</p>
+<p>Heo Kyun's father, Heo Yeop, lived in present-day Chodang-dong, Gangneung-si,</p>
+<p>and processed beans with a net to season them with clean seawater,</p>
+<p>and when it was rumored to taste good, his pen name "Chodang" was added and originated from Chodang.</p>
+<img class="cimg" src="gangwon1.jpg">
+<p>Currently, the birthplace of Samteojari,</p>
+<p>Nanseolheon Heo Cho-hee and Gyosan Heo Gyun in Chodang-dong is preserved as Gangwon-do Cultural Heritage No. 5.</p>
+<p>Since then, Chodang Tofu has been introduced.</p>
+
+<br><br>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+</div>
+
+</div>
+
+
+<div id="popup2" style="text-align: center">
+
+<div>
+<button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+<p>Mt. Seorak belongs to the Taebaek Mountains.</p>
+<p>It is the third highest mountain in South Korea after Hallasan Mountain and Jirisan Mountain.</p>
+<img class="cimg" src="gangwon2.jpg">
+<p>It was designated as the fifth national park on March 24, 1970.</p>
+<p>Seoraksan Mountain has a total area of 398.222 square kilometers.</p>
+
+<p>Rock rock and Ulsan rock are famous.</p>
+<p>The rock that shook was actually shaken, but now it is fixed with cement so that it cannot be shaken.</p>
+<p>Looking at the East Sea from Ulsan rock, Sokcho-si, police and East Sea a sea view is spectacular.</p>
+
+<p>Baekdamsa Temple and Sinheungsa Temple are located in Seoraksan Mountain,</p>
+<p> of which Sinheungsa Temple has to pay a so-called admission fee of cultural assets.</p>
+
+
+<br><br>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+</div>
+
+</div>
+
+
+<div id="popup3" style="text-align: center">
+
+<div>
+<button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+<p>A rail bike is a specially built bicycle along a railroad.</p>
+<p>The Jeongseon Rail Bike is a railway bicycle that runs 7.2 km from Gujeolli Station in Jeongseon,<br>
+  Gangwon Province to Aura.</p>
+  <img class="cimg" src="gangwon3.jpg">
+  <p> Jeongseon is a place far from the city center,</p>
+  <p> but it has beautiful scenery and scenery that cannot be enjoyed in the city center.</p>
+  <p> It is popular because you can fully feel the scenery.</p>
+
+<p>photo sources https://www.jeongseon.go.kr/tour/jeongseontour/attractions?contentSeq=100&mode=read</p>
+
+
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+</div>
+
+</div>
+
+<div id="popup4" style="text-align: center">
+<div>
+<button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+<p>Haeparang-road</p>
+<p>Road and sea waves in donghae, Gangwon Province.</p>
+<p>There are well-organized trails and beaches.</p>
+<p>If you follow the trail, you can see the beautiful scenery in turn.</p>
+<p>If you go around Ayajin Port, which has a pretty name,<br> you will meet the rough coastal scenery of Cheongjeongjeong.</p>
+<p>Passing through Songji Lake, the home of winter migratory birds,<br> you will find a traditional house called Yangtong House,</p>
+<p>which can only be found in northern Gangwon Province.</p>
+<img class="cimg" src="gangwon4.jpg">
+<p>Passing through the port of Gaun, Haeparang-gil has farming roads and Cheonbyeon-gil.</p>
+<p>Passing Geojin Port, the representative fishing port of Goseong, you will find the sunrise trail.</p>
+<p>If you climb the following gentle uphill, you will see Hwajinpo Lake and the sea in front of Hwajinpo.</p>
+Passing by Kim Il Sung's villa and Hwajinpo Maritime Museum, you can see the Unification Security Park.</p>
+<p>The 50-course Jejin checkpoint, the last of Haeparang-gil, to the Unification Observatory section is prohibited from walking.</p>
+<p>You have to fill out a registration form and use a vehicle at the Unification Security Park.</p>
+
+<br><br>
+
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+</div>
+</div>
+
+
+
+<div id="popup5" style="text-align: center">
+<div>
+<!--팝업 내부-->
+<button id="c5" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+<p>Gwongeumseong Fortress is part of Mt. Seorak in Sokcho.</p>
+<p>There is a legend that says Kwon Geum-seong fled his family to the mountains</p>
+<p>and built a castle overnight to fight against his enemies when Kwon and Kim were in trouble.</p>
+<p>It is said that it was also used as a refuge for the people during the Mongol invasion in 1254 (1254) of King Gojong of the Goryeo Dynasty.</p>
+<p>At an elevation of 850m, there is a beacon pole.</p>
+<img class="cimg" src="gangwon5.jpg">
+<p>A beacon mound in length 2km was pH of the sea can see the landscape of the city of Sokcho. Baekdu in the top, and donghae</p>
+
+<p>Img Source http://picpen.chosun.com/view/picpenViewDetail.picpen?picpen_seq=34710</p>
+
+<br><br>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+
+</div>
+</div>
+
+
+<div id="popup6" style="text-align: center">
+<div>
+<!--팝업 내부-->
+<button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+<p>The Soyang River Skywalk is located in Yeongseo-ro, Chuncheon-si, Gangwon-do.</p>
+<p>It is the longest skywalk facility in Korea, with a total length of 174 meters and a floor of 156 meters with transparent glass.</p>
+<p>If you look down at the bottom of the glass, you can see a river, and it was scarier the farther it went.</p>
+<p>It is located next to the Soyang 2 Bridge and the Soyang River maiden statue, which are landmarks of Chuncheon,</p>
+<p>and the floor is stacked with three special reinforced glass sheets to add safety.</p>
+<p>The entrance fee is 2,000 won and not expensive.</p>
+<img class="cimg" src="gangwon6.jpg">
+<p>Img Source https://kr.trip.com/travel-guide/chuncheon-si/soyanggang-skywalk-65177707/</p>
+
+<br><br>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+</button>
+<button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+</button>
+
+</div>
+</div>
+
+
+</div> <!-- container-fluid -->
+
+<div class="row text-center">
+<div class="col-sm-12">
+<button class="btn btn-default" onClick="location.href='part2_강원.html'" type="submit">Back</button>
+<br><br><br>
+<!--글자만 있는걸로 바꾸기-->
+</div>
+</div>
+<script type="text/javascript" src="part2_recent.js"></script>
+</body>
+<footer id="footer">
+<div class="container">
+<div class="col-sm-4">
+<img src="webmap.png" alt="#" class="img-responsive logo">
+<p>
+2021 Software Department Web Project.
+</p>
+</div>
+<div class="col-sm-4" style="padding-top: 70px;">
+<h5>
+Popular tags
+</h5>
+<ul class="places">
+<li>
+<a href="#" class="place">
+Vacation
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Seoul
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Sally
+</a>
+</li>
+<li>
+<a href="#" class="place">
+JeJu
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Trip
+</a>
+</li>
+<li>
+<a href="#" class="place">
+healing
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Europe
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Island
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+CATEGORIES
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Map </a> </li>
+<li> <a href="#"> Last article </a> </li>
+<li> <a href="#"> recommend </a> </li>
+<li> <a href="#"> mate  </a> </li>
+
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+ABOUT US
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Park Jaewon </a> </li>
+<li> <a href="#"> Kim Yewon </a> </li>
+<li> <a href="#"> JungYeonHwi </a> </li>
+</ul>
+</div>
+
+
+</div>
+<div class="footerbottom">
+<div class="container">
+
+<p>
+<strong>
+Copyright 2021
+</strong>
+Jaewon,YeonHwi,Yewon
+<strong>
+by LuckySeven
+</strong>
+</p>
+
+
+</div>
+</div>
+</footer>
+
+
+
+</html>

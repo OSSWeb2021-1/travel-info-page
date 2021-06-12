@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="reset.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="part2_recent_css.css">
+</head>
+<header>
+  <div id="titlediv">
+    <img class="titleimg" src="titleblue2.jpg">
+  </div>
+  <div class="container-fluid text-center bg">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+        <li><a href="info.html">Home</a></li>
+
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+<br>
+<br><br><br><br><br>
+
+
+<!-- <hr style="border: solid 2px black;"> -->
+
+<body style="margin:0 auto;">
+
+  <div class="container-fluid total_articles">
+
+    <script>
+      var ment = [
+        "",
+        "Hanriver is so beautiful",
+        "Gwanghwamun, the door for the palace",
+        "Gyeongbok Palace",
+        "Myungdong has so many shopping centers",
+        "Gyeonghwoiru in Spring!",
+        "You can rest in Yeoju Oncheon"
+      ];
+
+      for (var i = 1; i < 7; i++) {
+        document.write('<div class="total">');
+        document.write('<div class="col-sm-3" style="height : 300px"> <div class="each_pic">');
+        document.write('<img src="seoul' + (i - 1) + '.jpg" alt="picture" class="img-responsive pic" id="o' + i + '" onClick="clicking(id);"><p>' + ment[i] + '</p>');
+        document.write('</div></div></div>');
+      }
+    </script>
+
+
+    <div id="popup1" style="text-align: center">
+
+      <div>
+        <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>This is Hanriver.<br>
+          As you can see, Hanriver is so wide!</p>
+        <p>There are many beautiful bridges also lots of people go Hanriver park and rest!</p>
+        <p>They order fried chickens a lot</p>
+        <p>If you work near Hanriver about 5minutes, you will get so many chicken flyers</p>
+        <p>I'm sure it's the best choice in Hanriver</p>
+        <img class="cimg" src="seoul0.jpg">
+        <p>In the night, the lights of bridges and buildings make Hanriver more beautiful at night</p>
+        <p>Also you can ride a bike there,</p>
+        <p>The riding course of Hanriver is amazing</p>
+        <p>You will feel peace from the river and trees</p><br>
+        <p>You can also borrow a picnic set!</p>
+        <p>The picnic sets are so cute but perfect for dating</p>
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup2" style="text-align: center">
+
+      <div>
+        <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>A "History Waterway" was created to flow underground water from Gyeongbokgung Station</p>
+        <p>and Gwanghwamun Station on the subway to Cheonggyecheon Stream.</p>
+        <p>A "Hatch Madang" was created to connect the ground and Gwanghwamun Station behind Admiral Yi Sun-shin's statue </p>
+        <p>to make it easier for citizens to go to and from the square. Except for the regular square,</p>
+        <p>it was used as a 10-lane roadway and sidewalk, and traffic control was implemented according to the size of the event,</p>
+        <p>expanding to 67m wide for medium-sized events and 100m wide for large-scale events.</p>
+        <img class="cimg" src="seoul1.jpg">
+        <p>Near the statue of Admiral Yi Sun-shin, there are hydroponic facilities such as Sharp Fountain (bronze left and right),</p>
+        <p>Floor Fountain (bronze front), and others.</p>
+        <p>The 'Cheonggye Stream Connection' between Sejongno Intersection and</p>
+        <img class="cimg" src="seoul9.jpg">
+        <p>Cheonggye Square was created as the connection axis of the pedestrian network<br>
+          connecting Cheonggyecheon Stream and Gyeongbokgung Palace.</p>
+
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup3" style="text-align: center">
+
+      <div>
+        <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+        <p>Gyeongbokgung Palace is the best Beopgung Palace of the Joseon Dynasty.</p>
+        <p>Bukaksan Mountain is located in the north, and there is a wide Yukjo Street (now Sejong-ro) in front of Gwanghwamun, the main gate.</p>
+        <p>It is also the center of the urban planning of Hanyang (Seoul), the capital of Joseon.</p>
+        <p>It was founded by King Taejo Yi Seonggye in 1395.</p>
+        <p>It was burnt down by the Japanese Invasion of 1592 and reconstructed in 1867.</p>
+        <img class="cimg" src="seoul2.jpg">
+        <p>Inside the palace, there are political facilities for kings and officials,<br>
+          living spaces for royalty, and supporting spaces for relaxation.</p>
+        <p>In addition, there are complex palaces in the palace, including the queen's palace,</p>
+        <p>the crown prince's palace, and King Gojong's Geoncheong Palace.</p>
+        <p>Most of the buildings in the Japanese occupation, however, only removal of some central building.</p>
+        <p>Fortunately, a full-fledged restoration project was carried out in 1990,
+        <p>
+        <p>restoring the original features of the king and queen's sediment, Donggung Palace, Geoncheong Palace, and Taewonjeon Hall.</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+    <div id="popup4" style="text-align: center">
+      <div>
+        <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>This is Myungdong.</p><br><br>
+        <p>This is one of my favorite spot in Seoul.</p>
+        <p>As you can see in the picture,</p>
+        <p>It's SO ENERGETIC</p>
+        <img class="cimg" src="seoul3.jpg">
+        <p>There are many shopping places</p>
+        <p>I'm sure</p>
+        <p>Everyone will</p>
+        <p><b>love</b></p>
+        <p>This place</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+    </div>
+
+    <div id="popup5" style="text-align: center">
+      <div>
+        <!--팝업 내부-->
+        <button id="c5" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>Gyeonghoeru is a pond structure of Gyeongbokgung Palace.</p>
+        <p>It is generally not normally accessible to protect cultural assets.</p>
+        <p>You can watch it under the guidance of the cultural heritage commentator.</p>
+        <p>You can hear the history and learn how to enjoy the atmosphere and mood of the pond</p>
+        <img class="cimg" src="seoul4.jpg">
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+
+      </div>
+    </div>
+
+    <div id="popup6" style="text-align: center">
+      <div>
+        <button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>The best Oncheon near Seoul</p>
+        <p>Yeoju, Gyeonggido is one of my favorite spot near Seoul</p>
+        <p>Located at the top of Satgatbong Peak, it is the only hot spring in Yeoju.</p>
+        <p>Many people say that alkaline hot spring water, which contains a lot of natural minerals including sodium,</p>
+        <p> has been effective in dermatitis or atopic diseases.</p>
+        <p>Slippery hot spring water, if you touch it with your hands,</p>
+        <p>will keep your stomach healthy if you drink it constantly.</p>
+        <img class="cimg" src="seoul5.jpg">
+        <p>If you want to rest in hot water, don't hesitate, just visit Yeoju Oncheon</p>
+
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+
+      </div>
+    </div>
+
+  </div> <!-- container-fluid -->
+
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <button class="btn btn-default" onClick="location.href='part2_수도.html'" type="submit">Back</button>
+
+      <br><br><br>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="part2_recent.js"></script>
+</body>
+<footer id="footer">
+  <div class="container">
+    <div class="col-sm-4">
+      <img src="webmap.png" alt="#" class="img-responsive logo">
+      <p>
+        2021 Software Department Web Project.
+      </p>
+    </div>
+    <div class="col-sm-4" style="padding-top: 70px;">
+      <h5>
+        Popular tags
+      </h5>
+      <ul class="places">
+        <li>
+          <a href="#" class="place">
+            Vacation
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Seoul
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Sally
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            JeJu
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Trip
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            healing
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Europe
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Island
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        CATEGORIES
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Map </a> </li>
+        <li> <a href="#"> Last article </a> </li>
+        <li> <a href="#"> recommend </a> </li>
+        <li> <a href="#"> mate </a> </li>
+
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        ABOUT US
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Park Jaewon </a> </li>
+        <li> <a href="#"> Kim Yewon </a> </li>
+        <li> <a href="#"> JungYeonHwi </a> </li>
+      </ul>
+    </div>
+
+
+  </div>
+  <div class="footerbottom">
+    <div class="container">
+
+      <p>
+        <strong>
+          Copyright 2021
+        </strong>
+        Jaewon,YeonHwi,Yewon
+        <strong>
+          by LuckySeven
+        </strong>
+      </p>
+
+
+    </div>
+  </div>
+</footer>
+
+
+
+</html>
