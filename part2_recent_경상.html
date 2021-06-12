@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>recent gyeongsangdo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="part2_recent_css.css">
+</head>
+<header>
+<div id="titlediv">
+<img class="titleimg" src="titleblue2.jpg">
+</div>
+<div class="container-fluid text-center bg">
+<div class="navbar-header">
+<ul class="nav navbar-nav">
+<li><a href="info.html">Home</a></li>
+
+</ul>
+</div>
+</div>
+</header>
+
+
+<br>
+<br><br><br><br><br>
+
+
+<!-- <hr style="border: solid 2px black;"> -->
+<body style="margin:0 auto;">
+
+<div class="container-fluid total_articles">
+    <script>
+        var ment = [
+           "",
+           "Namhae Boriam!",
+           "Woljeonggyo Bridge, Daereungwon The deeper the night, the more beautiful",
+           "Meam Jedawon, It's a tea house in the tea field.!",
+           "Wine cave, lots of raspberries and wine"
+            ];
+
+           for(var i=0;i<4;i++){
+             document.write('<div class="col-sm-3 each_sec total" style="height : 300px; text-center">');
+             document.write('<img src="cs'+i+'.jpg" alt="picture" class="img-responsive pic" id="o'+(i+1)+'" onClick="clicking(id)"><p>'+ment[i+1]+'</p>');
+             document.write('</div>');
+           }
+
+        </script>
+
+        <div id="popup1" style="text-align: center">
+          <div>
+            <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+            <p>Nestled in Geumsan in the southern region</p>
+            <img src="cs01.JPG">
+            <p>There is a beautiful scenery</p>
+            <p>The view that spreads down the mountain</p>
+            <p>It is a place that never stops visiting.</p>
+            
+            <br><br>
+
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+            </button>
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+            </button>
+          </div>
+        </div>
+
+        <div id="popup2" style="text-align: center">
+          <div>
+            <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+            <p>As the late night deepens, it becomes more beautiful</p>
+            <img src="cs11.JPG">
+            <p>There is a story about everything, in the dark </p>
+            <p>It really shines brightly</p>
+            <p>It is majestic and splendid.</p>
+            <p><b>love</b></p>
+            <p>This place</p>
+            <p>♥</p>
+            <br><br>
+
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+            </button>
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+            </button>
+          </div>
+        </div>
+
+        <div id="popup3" style="text-align: center">
+          <div>
+            <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+            <p>It's a tea house in a tea plantation.</p>
+            <img src="cs21.JPG">
+            <p>The tea culture is impressive.</p>
+            <p>Brilliantly preserved</p>
+            <p>Spacious tea fields and traditional sensibility</p>
+            <p><b>Teacups and tableware that you can feel</b></p>
+            <p>Seeing you makes me feel at ease</p>
+            <p>♥</p>
+            <br><br>
+
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+            </button>
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+            </button>
+          </div>
+        </div>
+        <div id="popup4" style="text-align: center">
+          <div>
+            <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+            <p>The theme is raspberries and wine.</p>
+            <img src="cs31.jpg">
+            <p>It's a wine cave</p>
+            <p>You can taste and enjoy non-alcoholic cocktails.</p>
+            <p>You can taste wine and drinks, as well as non-alcoholic cocktails.</p>
+            <p><b>The road is long and there are many things to see, so you can stay for a long time.</b></p>
+            <p>You can enjoy it without any burden.</p>
+            <p>♥</p>
+            <br><br>
+
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+            </button>
+            <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+            </button>
+          </div>
+        </div>
+</div> <!-- container-fluid -->
+
+<div class="row text-center">
+<div class="col-sm-12">
+<button class="btn btn-default" onClick="location.href='part2_경상.html'" type="submit">Back</button>
+<br><br><br>
+<!--글자만 있는걸로 바꾸기-->
+</div>
+</div>
+<script type="text/javascript" src="part2_recent.js"></script>
+</body>
+<footer id="footer">
+<div class="container">
+<div class="col-sm-4">
+<img src="webmap.png" alt="#" class="img-responsive logo">
+<p>
+2021 Software Department Web Project.
+</p>
+</div>
+<div class="col-sm-4" style="padding-top: 70px;">
+<h5>
+Popular tags
+</h5>
+<ul class="places">
+<li>
+<a href="#" class="place">
+Vacation
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Seoul
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Sally
+</a>
+</li>
+<li>
+<a href="#" class="place">
+JeJu
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Trip
+</a>
+</li>
+<li>
+<a href="#" class="place">
+healing
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Europe
+</a>
+</li>
+<li>
+<a href="#" class="place">
+Island
+</a>
+</li>
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+CATEGORIES
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Map </a> </li>
+<li> <a href="#"> Last article </a> </li>
+<li> <a href="#"> recommend </a> </li>
+<li> <a href="#"> mate  </a> </li>
+
+</ul>
+</div>
+<div class="col-sm-2">
+<h5>
+ABOUT US
+</h5>
+<ul class="list-unstyled">
+<li> <a href="#"> Park Jaewon </a> </li>
+<li> <a href="#"> Kim Yewon </a> </li>
+<li> <a href="#"> JungYeonHwi </a> </li>
+</ul>
+</div>
+
+
+</div>
+<div class="footerbottom">
+<div class="container">
+
+<p>
+<strong>
+Copyright 2021
+</strong>
+Jaewon,YeonHwi,Yewon
+<strong>
+by LuckySeven
+</strong>
+</p>
+
+
+</div>
+</div>
+</footer>
+
+
+
+</html>

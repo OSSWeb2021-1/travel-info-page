@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>part2</title>
+      <link rel="stylesheet" href="reset.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="part2_css.css">
+   </head>
+   <body>
+   <!--map-->
+   <header>
+      <div id="titlediv">
+        <img src="titleblue2.jpg">
+    </div>
+      <div class="container-fluid text-center bg">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li><a href="info.html">Home</a></li>
+          </ul>
+        </div>
+
+        </ul>
+      </div>
+    </header>
+    <br><br>
+      <div class="container-fluid">
+
+         <body>
+         <div  align="center">
+            <div id="map" style="width: 800px; height: 450px;"></div>
+            <script>
+            var locations = [
+              ['Seoul, Incheon & Gyeonggi <br><br>'+'등록된 글 '+' 개<br><a href="#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
+              ['Daejeon, Sejong & Chungcheong <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
+              ['Gwangju & Jeolla <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
+              ['Daegu, Ulsan, Busan & Gyeonsang <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
+              ['Gangwon <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
+              ['Jeju <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
+            ];
+
+            function back(){
+               var map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 6.5,
+                 center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
+                 mapTypeId: google.maps.MapTypeId.ROADMAP
+               });
+
+               var infowindow = new google.maps.InfoWindow();
+               var marker, i;
+               for (i = 0; i < locations.length; i++) {
+                 marker = new google.maps.Marker({
+                  id:i,
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+                 });
+
+                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                  }
+                 })(marker, i));
+
+                 if(marker){
+                  marker.addListener('click', function() {
+                    map.setZoom(15);
+                    map.setCenter(this.getPosition());
+                  });
+                  }
+               }
+
+            }
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7mhIMq6CTy0Lboza1LgIAdZX0Z5DZNU&callback=back"
+            type="text/javascript"></script>
+
+         </div>
+      </div>
+      <br><br>
+
+      <div class="container-fluid" id="recent">
+        <br><br><br><br><br>
+      <h1>Recent Articles</h1>
+         <br>
+         <script>
+         var ment = [
+            "",
+            "Hanriver is so beautiful",
+            "Gwanghwamun, the door for the palace",
+            "Gyeongbok Palace",
+            "Myungdong has so many shopping centers",
+          ];
+
+            for(var i=0;i<4;i++){
+              document.write('<div class="col-sm-3 each_sec total" style="height : 300px; text-center">');
+              document.write('<img src="seoul'+i+'.jpg" alt="picture" class="img-responsive pic" id="o'+(i+1)+'" onClick="clicking(id)"><p>'+ment[i+1]+'</p>');
+              document.write('</div>');
+            }
+
+         </script>
+
+         <div id="popup1" style="text-align: center">
+           <div>
+             <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+             <p>This is Hanriver.<br>
+               As you can see, Hanriver is so wide!</p>
+             <p>There are many beautiful bridges also lots of people go Hanriver park and rest!</p>
+             <p>They order fried chickens a lot</p>
+             <p>If you work near Hanriver about 5minutes, you will get so many chicken flyers</p>
+             <p>I'm sure it's the best choice in Hanriver</p>
+             <img class="cimg" src="seoul0.jpg">
+             <p>In the night, the lights of bridges and buildings make Hanriver more beautiful at night</p>
+             <p>Also you can ride a bike there,</p>
+             <p>The riding course of Hanriver is amazing</p>
+             <p>You will feel peace from the river and trees</p><br>
+             <p>You can also borrow a picnic set!</p>
+             <p>The picnic sets are so cute but perfect for dating</p>
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+         <div id="popup2" style="text-align: center">
+           <div>
+             <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+             <p>A "History Waterway" was created to flow underground water from Gyeongbokgung Station</p>
+             <p>and Gwanghwamun Station on the subway to Cheonggyecheon Stream.</p>
+             <p>A "Hatch Madang" was created to connect the ground and Gwanghwamun Station behind Admiral Yi Sun-shin's statue </p>
+             <p>to make it easier for citizens to go to and from the square. Except for the regular square,</p>
+             <p>it was used as a 10-lane roadway and sidewalk, and traffic control was implemented according to the size of the event,</p>
+             <p>expanding to 67m wide for medium-sized events and 100m wide for large-scale events.</p>
+             <img class="cimg" src="seoul1.jpg">
+             <p>Near the statue of Admiral Yi Sun-shin, there are hydroponic facilities such as Sharp Fountain (bronze left and right),</p>
+             <p>Floor Fountain (bronze front), and others.</p>
+             <p>The 'Cheonggye Stream Connection' between Sejongno Intersection and</p>
+             <img class="cimg" src="seoul9.jpg">
+             <p>Cheonggye Square was created as the connection axis of the pedestrian network<br>
+               connecting Cheonggyecheon Stream and Gyeongbokgung Palace.</p>
+
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+         <div id="popup3" style="text-align: center">
+           <div>
+             <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+             <p>Gyeongbokgung Palace is the best Beopgung Palace of the Joseon Dynasty.</p>
+             <p>Bukaksan Mountain is located in the north, and there is a wide Yukjo Street (now Sejong-ro) in front of Gwanghwamun, the main gate.</p>
+             <p>It is also the center of the urban planning of Hanyang (Seoul), the capital of Joseon.</p>
+             <p>It was founded by King Taejo Yi Seonggye in 1395.</p>
+             <p>It was burnt down by the Japanese Invasion of 1592 and reconstructed in 1867.</p>
+             <img class="cimg" src="seoul2.jpg">
+             <p>Inside the palace, there are political facilities for kings and officials,<br>
+               living spaces for royalty, and supporting spaces for relaxation.</p>
+             <p>In addition, there are complex palaces in the palace, including the queen's palace,</p>
+             <p>the crown prince's palace, and King Gojong's Geoncheong Palace.</p>
+             <p>Most of the buildings in the Japanese occupation, however, only removal of some central building.</p>
+             <p>Fortunately, a full-fledged restoration project was carried out in 1990,
+             <p>
+             <p>restoring the original features of the king and queen's sediment, Donggung Palace, Geoncheong Palace, and Taewonjeon Hall.</p>
+
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+         <div id="popup4" style="text-align: center">
+           <div>
+             <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>This is Myungdong.</p><br><br>
+             <p>This is one of my favorite spot in Seoul.</p>
+             <p>As you can see in the picture,</p>
+             <p>It's SO ENERGETIC</p>
+             <img class="cimg" src="seoul3.jpg">
+             <p>There are many shopping places</p>
+             <p>I'm sure</p>
+             <p>Everyone will</p>
+             <p><b>love</b></p>
+             <p>This place</p>
+             <p>♥</p>
+             <br><br>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+         <!--최신글로 이동하는 버튼-->
+            <div id="rec_btns">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <button class="btn btn-default pull-right" onClick="location.href='part2_recent_수도권.html'" type="submit">More</button>   <!--글자만 있는걸로 바꾸기-->
+                     <button class="btn btn-default pull-right" onClick="back(); location.href='#map'" type="submit">Back</button>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <a href="#recom" class="pull-right">We also have some recommendations for you!</a>
+                  </div>
+               </div>
+            </div>
+
+      </div>
+      <br>
+      <br>
+
+
+
+   <!--recommendation-->
+   <div class="container-fluid" id="recom">
+     <br><br><br><br><br>
+   <h1>Recommendation</h1>
+      <br><br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+         <!-- Indicators -->
+         <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+         </ol>
+
+         <div class="carousel-inner total">
+            <div class="item active">
+               <div class="row">
+                  <div class="col-sm-3">
+                     <img src="seoul6.jpg" alt="picture" class="img-responsive pic" id="o6" onClick="clicking(id)">
+                  </div>
+                  <div class="col-sm-9 recomword">
+                        <h2>Seoul, the beautiful skyline</h2>
+                        <p>Seoul has been the capital of Korea for more than 600years. There are many things to enjoy.</p>
+                 </div>
+               </div>
+            </div>
+
+            <div class="item">
+               <div class="row">
+                  <div class="col-sm-3">
+                     <img src="seoul7.jpg" alt="picture" class="img-responsive pic" id="o7" onClick="clicking(id)">
+                  </div>
+                  <div class="col-sm-9 recomword">
+                        <h2>Byeolmadang(Coex)</h2>
+                        <p>Byeolmadang is a library in Coex. Coex is the largest comprehensive exhibition center.</p>
+                  </div>
+               </div>
+            </div>
+
+         </div> <!--carousel-->
+         <div id="popup6" style="text-align: center">
+           <div> <!--팝업 내부-->
+               <button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+                 <p>A skyline is a line that borders the sky with the flat end of the earth.</p>
+
+                <p>Skyline usually refers to the overall shape of buildings in the city from a far,</p>
+                <p>and in North America, where high-rise buildings are concentrated in the city center,</p>
+                <p>large cities have their own unique skyline, which plays a symbolic role.</p>
+
+                <img class="cimg" src="seoul6.jpg">
+                <p>The skyline in Korea is not as pretty as in other countries.</p>
+                <p>The skyline where the development took place is not very pretty,</p>
+                <p>but there are random buildings everywhere, so the skyline may be ugly.</p>
+
+                <p>However, the skyline of the former Seoul Metropolitan Government (Jongro-gu, etc.)</p>
+                <p>is beautiful because matchbox apartments (large complexes in Jamsil) are highly developed and uniformly formed.</p>
+                <p>The skyline, seeing in Lotte Tower is pretty. The admission fee for Lotte Tower is 27,000 won.</p>
+
+
+             <br><br>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+
+         </div>
+       </div>
+
+         <div id="popup7" style="text-align: center">
+           <div> <!--팝업 내부-->
+               <button id="c7" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+                <p>The Starfield Library is a library located at the COEX Mall in Starfield.</p>
+                <p>Starfield has a variety of books. It is about 50,000 books.</p>
+                <p>There are many books donated by executives and employees of Yeongpung Bookstore and Shinsegae.</p>
+                <img class="cimg" src="seoul7.jpg">
+                <p>Unlike other libraries, Byeolmadang symbolizes an open library.</p>
+                <p>In addition to reading books, you can see many people taking pictures here and there in the Byeolmadang.</p>
+                <p>Many foreigners can see whether it has become quite famous as a tourist destination since 2018.</p>
+                <p>Sunlight comes in during the day and the lighting on the bookshelf is very pretty at night.</p>
+                <p>Large sculptures are installed to attract people on Christmas or special occasions.</p>
+
+             <br><br>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+
+         </div>
+       </div>
+
+      </div>
+      <br><br><br><br><br><br>
+
+   </div>
+
+      <script type="text/javascript" src="part2_js.js"></script>
+      <br><br><br>
+   </body>
+
+<footer id="footer">
+   <div class="container">
+     <div class="col-sm-4">
+       <img src="webmap.png" alt="#" class="img-responsive logo">
+       <p style="margin: 0 0 1.75em;">
+         2021 Software Department Web Project.
+       </p>
+     </div>
+     <div class="col-sm-4" style="padding-top: 70px;">
+       <h5>
+         Popular tags
+       </h5>
+       <ul class="places">
+         <li>
+           <a href="#" class="place">
+             Vacation
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+            Seoul
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+           Sally
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             JeJu
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+            Trip
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             healing
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             Europe
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             Island
+           </a>
+         </li>
+       </ul>
+     </div>
+     <div class="col-sm-2">
+       <h5>
+         CATEGORIES
+       </h5>
+       <ul class="list-unstyled">
+         <li> <a href="#"> Map </a> </li>
+         <li> <a href="#"> Last article </a> </li>
+         <li> <a href="#"> recommend </a> </li>
+         <li> <a href="#"> mate  </a> </li>
+
+       </ul>
+     </div>
+     <div class="col-sm-2">
+       <h5>
+         ABOUT US
+       </h5>
+       <ul class="list-unstyled">
+         <li> <a href="#"> Park Jaewon </a> </li>
+         <li> <a href="#"> Kim Yewon </a> </li>
+         <li> <a href="#"> JungYeonHwi </a> </li>
+       </ul>
+     </div>
+
+
+
+   </div>
+   <div class="footerbottom">
+     <div class="container">
+
+         <p>
+           <strong>
+             Copyright 2021
+           </strong>
+          Jaewon,YeonHwi,Yewon
+           <strong>
+             by LuckySeven
+           </strong>
+         </p>
+
+
+     </div>
+   </div>
+ </footer>
+</html>

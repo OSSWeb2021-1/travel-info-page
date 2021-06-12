@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>part2 chungcheong</title>
+      <link rel="stylesheet" href="reset.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="part2_css.css">
+   </head>
+   <body>
+   <!--map-->
+   <header>
+      <div id="titlediv">
+        <img src="titleblue2.jpg">
+    </div>
+      <div class="container-fluid text-center bg">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li><a href="info.html">Home</a></li>
+          </ul>
+        </div>
+
+        </ul>
+      </div>
+    </header>
+    <br><br>
+      <div class="container-fluid">
+
+         <body>
+         <div  align="center">
+            <div id="map" style="width: 800px; height: 450px;"></div>
+            <script>
+        var locations = [
+            ['Seoul, Incheon & Gyeonggi <br><br>' + 'Posted articles ' + '6<br><a href="part2_수도.html#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
+            ['Daejeon, Sejong & Chungcheong <br><br>' + 'Posted articles ' + '4<br><a href="part2_충청.html#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
+            ['Gwangju & Jeolla <br><br>' + 'Posted articles ' + '6<br><a href="part2_전라.html#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
+            ['Daegu, Ulsan, Busan & Gyeonsang <br><br>' + 'Posted articles ' + '4<br><a href="part2_경상.html#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
+            ['Gangwon <br><br>' + 'Posted articles ' + '6<br><a href="part2_강원.html#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
+            ['Jeju <br><br>' + 'Posted articles ' + '8<br><a href="part2_제주.html#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
+          ];
+            function back(){
+               var map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 6.5,
+                 center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
+                 mapTypeId: google.maps.MapTypeId.ROADMAP
+               });
+
+               var infowindow = new google.maps.InfoWindow();
+               var marker, i;
+               for (i = 0; i < locations.length; i++) {
+                 marker = new google.maps.Marker({
+                  id:i,
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+                 });
+
+                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                  }
+                 })(marker, i));
+
+                 if(marker){
+                  marker.addListener('click', function() {
+                    map.setZoom(15);
+                    map.setCenter(this.getPosition());
+                  });
+                  }
+               }
+
+            }
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7mhIMq6CTy0Lboza1LgIAdZX0Z5DZNU&callback=back"
+            type="text/javascript"></script>
+
+         </div>
+      </div>
+      <br><br>
+
+      <div class="container-fluid" id="recent">
+        <br><br><br><br><br>
+      <h1>Recent Articles</h1>
+         <br>
+         <script>
+         var ment = [
+            "",
+            "Ceiling Suspension Bridge,Full of thrills!",
+            "Chilgapsan Jangseung Park, The best Jangseung culture in Korea",
+            "Janggoksa Temple,Famous as a temple with two Daeungjeon.!",
+            "Chilgapsan Natural Recreational Forest, Chungnam Alps!"
+             ];
+
+            for(var i=0;i<4;i++){
+              document.write('<div class="col-sm-3 each_sec total" style="height : 300px; text-center">');
+              document.write('<img src="cc'+i+'.jpg" alt="picture" class="img-responsive pic" id="o'+(i+1)+'" onClick="clicking(id)"><p>'+ment[i+1]+'</p>');
+              document.write('</div>');
+            }
+
+         </script>
+
+         <div id="popup1" style="text-align: center">
+           <div>
+             <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>This is cheonjanghochulleongdali</p>
+             <p>Cheongyang's representative tourist attraction 'Cheongjangho Suspension Bridge's</p>
+             <img src="cc01.JPG">
+             <p>Parks and walking trails while walking up to the suspension bridge</p>
+             <p>It's beautifully designed, so it's easy to enjoy.</p>
+             <p>One of the best tourist spots because there is no parking fee or entrance fee.</p>
+             <p>※ Because there are many stone roads, we recommend wearing comfortable shoes!</p>
+             <p>♥</p>
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+         <div id="popup2" style="text-align: center">
+           <div>
+             <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>This is The best Jangseung culture in Korea</p>
+             <img src="cc11.jpg">
+             <p>The second place to visit in Cheongyang, Chilgapsan Jangseung Park</p>
+             <p>It is said that the origin of Jangseung comes from ancient Sotdae and Seondol.</p>
+             <p>It is said that it was called Jangseung in the Joseon Dynasty.</p>
+             <p><b>Residents use Jangseung as a boundary between regions</b></p>
+             <p>It is said that he was considered the guardian deity of the village.</p>
+             
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+         <div id="popup3" style="text-align: center">
+           <div>
+             <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>It is a temple known to have been founded by Chejing during the Shilla period.</p>
+             <img src="cc21.JPG">
+             <p>It is located at the western foot of Chilgapsan Mountain, so it is very quiet.</p>
+             <p>Janggoksa Temple is also famous as a temple with two Daeungjeon.</p>
+             <p>The temples located on the sloped terrain have Daesangungjeon and Hadaeungjeon.</p>
+             
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+         <div id="popup4" style="text-align: center">
+           <div>
+             <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>99 valleys under Chilgapsan Provincial Park, Naengcheon Gyecok, Ganggamchan Valley, etc.</p>
+             <img src="cc31.JPG">
+             <p>It is a recreational forest with pine forests in harmony.</p>
+             <p>There are various facilities such as log cabins, training centers, hanoks, and huts.</p>
+             <p>You can breathe the fresh air in the mountains.</p>
+             <p><b>How good it was- I definitely recommend this place to stay in Cheongyang!</b></p>
+            
+             <br><br>
+
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+           </div>
+         </div>
+
+
+         <!--최신글로 이동하는 버튼-->
+            <div id="rec_btns">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <button class="btn btn-default pull-right" onClick="location.href='part2_recent_충청.html'" type="submit">More</button>   <!--글자만 있는걸로 바꾸기-->
+                     <button class="btn btn-default pull-right" onClick="back(); location.href='#map'" type="submit">Back</button>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-sm-12">
+                     <a href="#recom" class="pull-right">We also have some recommendations for you!</a>
+                  </div>
+               </div>
+            </div>
+
+      </div>
+      <br>
+      <br>
+
+
+
+   <!--recommendation-->
+   <div class="container-fluid" id="recom">
+     <br><br><br><br><br>
+   <h1>Recommendation</h1>
+      <br><br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+         <!-- Indicators -->
+         <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+         </ol>
+
+         <div class="carousel-inner total">
+            <div class="item active">
+               <div class="row">
+                  <div class="col-sm-3">
+                     <img src="cc21.JPG" alt="picture" class="img-responsive pic" id="o6" onClick="clicking(id)">
+                  </div>
+                  <div class="col-sm-9 recomword">
+                        <h2>Janggoksa Temple,Famous as a temple with two Daeungjeon.!"</h2>
+                        <p>Janggoksa Temple is  famous as a temple with two Daeungjeon.</p>
+                 </div>
+               </div>
+            </div>
+
+            <div class="item">
+               <div class="row">
+                  <div class="col-sm-3">
+                     <img src="cc11.JPG" alt="picture" class="img-responsive pic" id="o7" onClick="clicking(id)">
+                  </div>
+                  <div class="col-sm-9 recomword">
+                        <h2>The best Jangseung culture in Korea</h2>
+                        <p>It is said that it was called Jangseung in the Joseon Dynasty.</p>
+                  </div>
+               </div>
+            </div>
+
+         </div> <!--carousel-->
+         <div id="popup6" style="text-align: center">
+           <div> <!--팝업 내부-->
+               <button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>추천 여행지 첫번째 팝업</p>
+             <img src="seoul4.jpg">
+             <p> 내용 채울 것</p>
+             <br><br>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+
+         </div>
+       </div>
+
+         <div id="popup7" style="text-align: center">
+           <div> <!--팝업 내부-->
+               <button id="c7" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+             <p>추천 여행지 두번째 팝업</p>
+             <img src="seoul5.jpg">
+             <p>There are many shopping places</p>
+             <p>I'm sure</p>
+             <p>Everyone will</p>
+             <p><b>love</b></p>
+             <p>This place</p>
+             <p>♥</p>
+             <br><br>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+             </button>
+             <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+             </button>
+
+         </div>
+       </div>
+
+      </div>
+      <br><br><br><br><br><br>
+
+   </div>
+
+      <script type="text/javascript" src="part2_js.js"></script>
+      <br><br><br>
+   </body>
+
+<footer id="footer">
+   <div class="container">
+     <div class="col-sm-4">
+       <img src="webmap.png" alt="#" class="img-responsive logo">
+       <p style="margin: 0 0 1.75em;">
+         2021 Software Department Web Project.
+       </p>
+     </div>
+     <div class="col-sm-4" style="padding-top: 70px;">
+       <h5>
+         Popular tags
+       </h5>
+       <ul class="places">
+         <li>
+           <a href="#" class="place">
+             Vacation
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+            Seoul
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+           Sally
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             JeJu
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+            Trip
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             healing
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             Europe
+           </a>
+         </li>
+         <li>
+           <a href="#" class="place">
+             Island
+           </a>
+         </li>
+       </ul>
+     </div>
+     <div class="col-sm-2">
+       <h5>
+         CATEGORIES
+       </h5>
+       <ul class="list-unstyled">
+         <li> <a href="#"> Map </a> </li>
+         <li> <a href="#"> Last article </a> </li>
+         <li> <a href="#"> recommend </a> </li>
+         <li> <a href="#"> mate  </a> </li>
+
+       </ul>
+     </div>
+     <div class="col-sm-2">
+       <h5>
+         ABOUT US
+       </h5>
+       <ul class="list-unstyled">
+         <li> <a href="#"> Park Jaewon </a> </li>
+         <li> <a href="#"> Kim Yewon </a> </li>
+         <li> <a href="#"> JungYeonHwi </a> </li>
+       </ul>
+     </div>
+
+
+
+   </div>
+   <div class="footerbottom">
+     <div class="container">
+
+         <p>
+           <strong>
+             Copyright 2021
+           </strong>
+          Jaewon,YeonHwi,Yewon
+           <strong>
+             by LuckySeven
+           </strong>
+         </p>
+
+
+     </div>
+   </div>
+ </footer>
+</html>
