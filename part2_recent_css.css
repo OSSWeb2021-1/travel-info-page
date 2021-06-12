@@ -1,0 +1,378 @@
+.each_pic {
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+}
+
+.pic {
+  margin: auto;
+  display: block;
+  height: 210px;
+  width: 250px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#total {
+  visibility: visible;
+}
+
+.total_articles p {
+  color: black;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.total_articles {
+  margin-top: 10px;
+}
+
+.each_row {
+  border: 2px solid green;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Comic Sans MS;
+  background-color: #F8F5ED;
+}
+
+p {
+  text-align: center;
+  margin: 0 0 1.75em;
+}
+
+.cimg {
+  width: 100%;
+}
+
+/*-- POPUP common style E --*/
+#popup1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+}
+
+#popup2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+}
+
+#popup3 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+}
+
+#popup4 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+}
+
+#popup5 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+  padding-top: 0px;
+}
+
+#popup6 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
+  background: white;
+  /*이쪽 색을 바꿀까 */
+  display: none;
+  position: fixed;
+  width: 60%;
+  left: 60%;
+  margin-left: -40%;
+  /* half of width */
+  height: 80%;
+  top: 10%;
+  z-index: 100;
+  padding-top: 0px;
+}
+
+#popup1>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#popup2>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#popup3>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#popup4>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#popup5>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#popup6>div {
+  padding: 50px;
+  color: black;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.pbtn {
+  top: 11%;
+  position: fixed;
+  margin-left: -29%;
+}
+
+.glyphicon {
+  margin: 2px 20px 2px 20px;
+  padding: 5px 10px 5px 10px;
+  font-size: 1.8em;
+}
+
+< !--제목 상단이랑 푸터-->#titlediv {
+  transform: translate(50%, 0);
+  z-index: 1;
+}
+
+#titlediv img {
+  display: block;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  height : 150px;
+}
+
+.titleimg {
+  text-align: center;
+}
+
+.nav a {
+  z-index: 1;
+}
+
+.col-sm-2 {
+  margin-top: 70px;
+}
+
+.menubar {
+  text-align: center;
+  /* margin-top: 150px; */
+}
+
+.menubutton {
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 15px;
+  padding: 20px;
+}
+
+.imagebutton {
+  background-color: inherit;
+  border: 0px;
+  outline: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 15px;
+  padding: 20px;
+}
+
+.matebutton {
+  background-color: inherit;
+  border: 0px;
+  outline: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 15px;
+  padding: 20px;
+}
+
+.menubutton:hover {
+  background-color: black;
+  color: white;
+}
+
+.bg {
+  width: 100%;
+  background-color: inherit;
+  z-index: 1;
+}
+
+.bg-foot {
+  padding: 10px 10px 10px 10px;
+}
+
+.footterstyle {
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.conversion-section {
+  background-color: #FFFFFF;
+  margin-top: 25px;
+  padding: 25px 30px;
+}
+
+.conversion h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.conversion a.btn {
+  margin-top: 24px;
+}
+
+.btn-danger, .dropdown-toggle.btn-danger {
+  background-color: #ff5722;
+}
+
+.btn-danger:hover {
+  background-color: #ff5722;
+}
+
+#footer {
+  background-color: #C8E7F5;
+  margin-bottom: -500px;
+}
+
+p {
+  margin: 0 0 1.75em;
+}
+
+#footer strong {
+  color: #000;
+}
+
+.strong, b, strong {
+  color: #000;
+  font-weight: 500;
+}
+
+#footer a {
+  color: #000;
+}
+
+.places {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.places li {
+  float: left;
+}
+
+.place {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  padding: 0 20px 0 23px;
+  height: 26px;
+  border-radius: 3px 0 0 3px;
+  background: #F3F3F3;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.place::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #EFF1F5;
+  background: #fff;
+  content: '';
+}

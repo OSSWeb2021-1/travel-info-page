@@ -10,51 +10,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
-    #title {
-      border: 0px;
-      outline: none;
-      background-color: black;
-      
-      position: fixed;
-      z-index : 1;
-    }
-
-    .titlediv {
-      position: fixed;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-    }
-
-    .top {
-      text-align: center;
-      padding-bottom: 20px;
-    }
-
-    .under {
-      display: inline;
-      margin-left: 20px;
-      padding: 5px;
-    }
-
-    .firstimage {
+    #titlediv img {
+      display: block;
+      margin-left: 0px;
+      margin-right: 0px;
       width: 100%;
-      height: 500px;
+      height: 150px;
     }
 
-    .secondimage {
-      width: 100%;
-      height: 300px;
-    }
-
-    .thirdimage {
-      width: 100%;
-      height: 700px;
+    .col-sm-2 {
+      margin-top: 70px;
     }
 
     .menubar {
       text-align: center;
-      margin-top: 80px;
     }
 
     .menubutton {
@@ -64,45 +33,213 @@
       margin-right: 50px;
       font-size: 15px;
       padding: 20px;
+      transition: all 300ms linear;
     }
 
-    .menubutton:hover {
-      background-color: black;
-      color: white;
+    .imagebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px;
+    }
+
+    .charbutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px;
+    }
+
+    .matebutton {
+      background-color: inherit;
+      border: 0px;
+      outline: none;
+      margin-left: 50px;
+      margin-right: 50px;
+      font-size: 15px;
+      padding: 20px;
     }
 
     .bg {
-      width : 100%;
-      margin-top: 40px;
-      position: fixed;
-      background-color: black;
-      z-index : 1;
+      width: 100%;
+      background-color: inherit;
+      z-index: 1;
+    }
+
+    body {
+      font-family: Comic Sans MS;
+      background-color: #F8F5ED;
+    }
+
+
+    .bg-foot {
+      padding: 10px 10px 10px 10px;
+    }
+
+    .footterstyle {
+      font-size: 30px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .conversion-section {
+      background-color: #FFFFFF;
+      margin-top: 25px;
+      padding: 25px 30px;
+    }
+
+    .conversion h3 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .conversion a.btn {
+      margin-top: 24px;
+    }
+
+    .btn-danger,
+    .dropdown-toggle.btn-danger {
+      background-color: #ff5722;
+    }
+
+    .btn-danger:hover {
+      background-color: #ff5722;
+    }
+
+    #footer {
+      z-index: 1;
+      background-color: #C8E7F5;
+      margin-bottom: -500px;
+    }
+
+    p {
+      margin: 0 0 1.75em;
+    }
+
+    #footer strong {
+      color: #000;
+    }
+
+    .strong,
+    b,
+    strong {
+      color: #000;
+      font-weight: 500;
+    }
+
+    #footer a {
+      color: #000;
+    }
+
+    .places {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .places li {
+      float: left;
+    }
+
+    .place {
+      position: relative;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      padding: 0 20px 0 23px;
+      height: 26px;
+      border-radius: 3px 0 0 3px;
+      background: #F3F3F3;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 26px;
+
+    }
+
+    .place::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 10px solid #EFF1F5;
+      background: #fff;
+      content: '';
+
+    }
+
+    .mapclass {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .bg-METROPOLITAN {
+      background-image: url("sudogwon.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-GANGWON {
+      background-image: url("gangwondo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-CHUNGCHEONG {
+      background-image: url("chungcheongdo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-GYEONGSANG {
+      background-image: url("gyeongsangdo.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-JEONLA {
+      background-image: url("jeonlado.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
+    }
+
+    .bg-JEJU {
+      background-image: url("jeju.jpg");
+      background-size: 100% 300px;
+      background-repeat: no-repeat;
     }
 
     .bg-1 {
-      background-image: url("image.jpg");
-      background-size: 100% 600px;
+      background-image: url("1.jpg");
+      background-size: 100% 365px;
       background-repeat: no-repeat;
     }
 
     .bg-2 {
-      background-image: url("image1.jpg");
-      background-size: 100% 500px;
+      background-image: url("2.jpg");
+      background-size: 100% 365px;
       background-repeat: no-repeat;
     }
 
     .bg-3 {
-      background-image: url("image2.jpg");
-      background-size: 100% 500px;
+      background-image: url("3.jpg");
+      background-size: 100% 365px;
       background-repeat: no-repeat;
     }
 
     .bg-4 {
-      padding: 150px 150px 150px 150px;
+      background-image: url("4.jpg");
+      background-size: 100% 365px;
+      background-repeat: no-repeat;
     }
 
-    body {
-      font-family: Comic Sans MS
+    .bg-foot {
+      padding: 150px 150px 150px 150px;
     }
 
     h1 {
@@ -120,51 +257,160 @@
       font-size: 30px;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
+
+    .mateclass {
+      background-image: url("warm.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .signup1
+    {
+        margin-left: 100px;
+        background-color: rgb(255, 255, 255);
+    }
+    .login
+    {
+        margin-left: 30px;
+        background-color: rgb(255, 255, 255);
+    }
   </style>
 
   <script>
+    function onmap() {
+      document.getElementById('mapbutton').style.backgroundColor = "black";
+      document.getElementById('mapbutton').style.color = "white";
+      document.getElementById('mapbutton').style.border = "10px solid black"
+    }
+
+    function outmap() {
+      document.getElementById("mapbutton").style.backgroundColor = "white";
+      document.getElementById("mapbutton").style.color = "black";
+      document.getElementById('mapbutton').style.border = "2px solid black"
+    }
+
+    function oncontact() {
+      document.getElementById('contactbutton').style.backgroundColor = "black";
+      document.getElementById('contactbutton').style.color = "white";
+      document.getElementById('contactbutton').style.border = "10px solid black"
+    }
+
+    function outcontact() {
+      document.getElementById("contactbutton").style.backgroundColor = "white";
+      document.getElementById("contactbutton").style.color = "black";
+      document.getElementById('contactbutton').style.border = "2px solid black"
+    }
+
+    function onwrite() {
+      document.getElementById('writebutton').style.backgroundColor = "black";
+      document.getElementById('writebutton').style.color = "white";
+      document.getElementById('writebutton').style.border = "10px solid black"
+    }
+
+    function outwrite() {
+      document.getElementById("writebutton").style.backgroundColor = "white";
+      document.getElementById("writebutton").style.color = "black";
+      document.getElementById('writebutton').style.border = "2px solid black"
+    }
+
+    function onvote() {
+      document.getElementById('votebutton').style.backgroundColor = "black";
+      document.getElementById('votebutton').style.color = "white";
+      document.getElementById('votebutton').style.border = "10px solid black"
+    }
+
+    function outvote() {
+      document.getElementById("votebutton").style.backgroundColor = "white";
+      document.getElementById("votebutton").style.color = "black";
+      document.getElementById('votebutton').style.border = "2px solid black"
+    }
+
+    function onmate() {
+      document.getElementById('matebutton').style.backgroundColor = "black";
+      document.getElementById('matebutton').style.color = "white";
+      document.getElementById('matebutton').style.border = "10px solid black"
+    }
+
+    function outmate() {
+      document.getElementById("matebutton").style.backgroundColor = "white";
+      document.getElementById("matebutton").style.color = "black";
+      document.getElementById('matebutton').style.border = "2px solid black"
+    }
+
+    function onimage(b) {
+      b.style.border = "10px solid white";
+      b.style.opacity = 0.5;
+    }
+
+    function outimage(b) {
+      b.style.border = "";
+      b.style.opacity = 1;
+    }
+
+
     function map() {
       window.open('part2.html');
     }
 
     function latest() {
-      window.open('part2/recent.html');
+      window.open('part2_recent.html');
     }
 
-    function recommend() {
-      window.open('part2_recome.html');
+    function contact() {
+      window.open('contact.html');
     }
 
     function write1() {
       window.open('jw.html');
     }
 
-    function review() {
-      window.open('part2.html');
+    function vote() {
+      window.open('vote.html');
     }
 
-    function alert() {
-      window.open('part2.html');
+    function mate() {
+      window.open('mate.html');
     }
+    function process() {
+        const str1='jae';
+        const str2='123';
+
+    var id1 = document.getElementById("id1");
+    var pass1 = document.getElementById("pass1");
+    if(id1.value==str1 && pass1.value==str2)
+    {
+        alert('환영합니다');
+        window.open('info1.html');
+    }
+    else
+    {
+    alert('아이디,비밀번호를 다시확인해주세요')
+    };
+            }
+
+            function signup1() {
+      window.open('new_main.html');
+    }
+
+
+
+    var arrname = ["METROPOLITAN", "GANGWON", "CHUNGCHEONG", "GYEONGSANG", "JEONLA", "JEJU"];
+    var arrmate = ["Sally", "Ryn", "Mike", "Min"];
   </script>
 </head>
 
 <body>
   <header>
-    <div class="container-fluid text-center bg-title">
-      <div class="titlediv" <button type="button" id="title" href="#">
-        <img src="title.png">
-        </button>
-      </div>
+    <div id="titlediv">
+      <img src="titleblue2.jpg">
     </div>
-
 
     <div class="container-fluid text-center bg">
       <div class="navbar-header">
         <ul class="nav navbar-nav">
-          <li><a href="#">Home</a></li>
+          <li><a href="info.html">Home</a></li>
         </ul>
       </div>
+
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -196,150 +442,225 @@
             </div>
             <div class="col-sm-4">
               <p><strong>Frequently asked questions</strong></p>
-              <p>zzzz</p>
+              <p>Hi</p>
             </div>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> My account</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> LOGIN</a>
           <ul class="dropdown-menu" style="width : 300px">
-            <p style="margin : 30px">Join or Login</p>
-            <div class="col-sm-3">
-            </div>
-            <div class="col-sm-3">
-              <button type="button" class="btn">Join</button>
-            </div>
-            <div class="col-sm-3">
-              <button type="button" class="btn btn-primary">Login</button>
-            </div>
-            <div class="col-sm-3">
-            </div>
+            <form name="myform">
+              ID</p><input type="text" id="id1"><br>
+              PASS</p><input type="password" id="pass1"><br><br>
+              <input type="submit" value="LOGIN" onclick="process()" class="login">
+              <input type="submit" value="Sign Up" onclick="signup1()"class="signup1">
+            </form>
           </ul>
         </li>
+
+
       </ul>
     </div>
   </header>
 
+
   <br>
   <div class="menubar">
-    <button type="button" class="menubutton" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
-    <button type="button" class="menubutton" onclick="latest()"><span class="glyphicon glyphicon-picture"></span> latest article</button>
-    <button type="button" class="menubutton" onclick="recommend()"><span class="glyphicon glyphicon-thumbs-up"></span> recommend</button>
-    <button type="button" class="menubutton" onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
-    <button type="button" class="menubutton" onclick="review()"><span class="glyphicon glyphicon-tag"></span> REVIEW</button>
-    <button type="button" class="menubutton" onclick="alert()"><span class="glyphicon glyphicon-eye-open"></span> Alerts</button>
+    <button type="button" class="menubutton" id="mapbutton" onmouseover="onmap()" onmouseout="outmap()" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
+    <button type="button" class="menubutton" id="matebutton" onmouseover="onmate()" onmouseout="outmate()" onclick="mate()"><span class="glyphicon glyphicon-hand-right"></span> MATE <span class="glyphicon glyphicon-hand-left"></span></button>
+    <button type="button" class="menubutton" id="votebutton" onmouseover="onvote()" onmouseout="outvote()" onclick="vote()"><span class="glyphicon glyphicon-inbox"></span> VOTE</button>
+    <button type="button" class="menubutton" id="writebutton" onmouseover="onwrite()" onmouseout="outwrite()" onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton" id="contactbutton" onmouseover="oncontact()" onmouseout="outcontact()" onclick="contact()"><span class="glyphicon glyphicon-flash"></span> CONTACT</button>
   </div>
   <br>
 
-  <div class="container-fluid text-center">
-    <div class="col-sm-4" style="height : 600px">
-      <div class="bg-1">
-        <br>
-        <h1>서울</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-        <br><br>
+  <div class="mapclass">
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+        for (var i = 0; i < 3; i++) {
+          document.write('<div class="col-sm-4">');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="charbutton" id="charb" onclick="latest()"');
+          document.write('<p>'+arrname[i]+'</p>');
+          document.write('</button>');
+          document.write('</div>');
+          document.write('</div>');
+        }
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+
+  <div class="blankclass">
+    <div class="container-fluid">
+      <script>
+        for (var i = 0; i < 1; i++) {
+          document.write('<br>');
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="mapclass">
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+        for (var i = 3; i < 6; i++) {
+          document.write('<div class="col-sm-4">');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="charbutton" id="charb" onclick="latest()"');
+          document.write('<p>'+arrname[i]+'</p>');
+          document.write('</button>');
+          document.write('</div>');
+          document.write('</div>');
+        }
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+  <div class="blankclass">
+    <div class="container-fluid">
+      <script>
+        for (var i = 0; i < 1; i++) {
+          document.write('<br>');
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="mateclass">
+    <div class="container-fluid text-center">
+      <div class="col-sm-12">
+        <h1>Who will be your best Travel Mate?</h1>
+        <button type="button" class="imagebutton" onclick="Mate()">more</button>
       </div>
     </div>
 
-    <div class="col-sm-4" style="height : 600px">
-      <div class="bg-1">
-        <br>
-        <h1>수도권</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-        <br><br>
+    <br>
+
+    <div class="container-fluid text-center">
+      <script>
+        document.write('<div class="row">');
+
+        for (var i = 0; i < 4; i++) {
+          document.write('<div class="col-sm-3">');
+          document.write('<div class="bg-' + (i + 1) + '">');
+          for (var k = 0; k < 18; k++) {
+            document.write('<br>');
+          }
+          document.write('<button type="button" class="matebutton" onclick="mate()">' + arrmate[i] + '</button>');
+          document.write('</div></div>');
+        }
+
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="col-sm-4">
+        <img src="webmap.png" alt="#" class="img-responsive logo">
+        <p>
+          2021 Software Department Web Project.
+        </p>
+      </div>
+      <div class="col-sm-4" style="padding-top: 70px;">
+        <h5>
+          Popular tags
+        </h5>
+        <ul class="places">
+          <li>
+            <a href="#" class="place">
+              Vacation
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Seoul
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Sally
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              JeJu
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Trip
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              healing
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Europe
+            </a>
+          </li>
+          <li>
+            <a href="#" class="place">
+              Island
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          CATEGORIES
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Map </a> </li>
+          <li> <a href="#"> Last article </a> </li>
+          <li> <a href="#"> recommend </a> </li>
+          <li> <a href="#"> mate </a> </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-2">
+        <h5>
+          ABOUT US
+        </h5>
+        <ul class="list-unstyled">
+          <li> <a href="#"> Park Jaewon </a> </li>
+          <li> <a href="#"> Kim Yewon </a> </li>
+          <li> <a href="#"> JungYeonHwi </a> </li>
+        </ul>
       </div>
     </div>
+    <div class="footerbottom">
+      <div class="container">
 
-    <div class="col-sm-4" style="height : 600px">
-      <div class="bg-1">
-        <br>
-        <h1>강원도</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-        <br><br>
+        <p>
+          <strong>
+            Copyright 2021
+          </strong>
+          Jaewon,YeonHwi,Yewon
+          <strong>
+            by LuckySeven
+          </strong>
+        </p>
+
+
       </div>
     </div>
-
-    <div class="container-fluid text-center row no-gutters">
-      <div class="col-sm-6" style="height : 500px">
-        <div class="bg-2">
-          <br>
-          <h1>경상도</h1>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-          <br><br>
-        </div>
-      </div>
-
-      <div class="col-sm-6" style="height : 500px">
-        <div class="bg-2">
-          <br>
-          <h1>전라도</h1>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-          <br><br>
-        </div>
-      </div>
-
-      <div class="container-fluid text-center row no-gutters">
-        <div class="col-sm-6" style="height : 500px">
-          <div class="bg-3">
-            <br>
-            <h1>제주도</h1>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-            <br><br>
-          </div>
-        </div>
-
-        <div class="col-sm-6" style="height : 500px">
-          <div class="bg-3">
-            <br>
-            <h1>충청도</h1>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <a href="#part2_recent" style="font-size : 20px; color:white">More</a>
-            <br><br>
-          </div>
-        </div>
-      </div>
-
-      <footer class="container-fluid bg-4 text-center">
-        <h1 style="text-align: center;color: rgb(46, 99, 245);">여행지 정보 공유 사이트</h1>
-        <br><br>
-        <table>
-          <tr>
-            <td><span class="glyphicon glyphicon-fire"></span></td>
-            <td><span class="glyphicon glyphicon-user"></span></td>
-            <td><span class="glyphicon glyphicon-home"></span></td>
-            <td><span class="glyphicon glyphicon-star"></span></td>
-            <td><span class="glyphicon glyphicon-info-sign"></span></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/JaeWon1717">https://github.com/JaeWon1717</td>
-            <td>Park Jae won</td>
-            <td>Computer Science</td>
-            <td>@jaewonpark_10</td>
-            <td>2017038054</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/JungYeonHwi">https://github.com/JungYeonHwi</td>
-            <td>Jung Yeon Hwi</td>
-            <td>Computer Science</td>
-            <td>@no insta</td>
-            <td>2018068020</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/yewon918">https://github.com/yewon918</td>
-            <td>Kim Ye Won</td>
-            <td>Computer Science</td>
-            <td>@kimye_ohneulman_sanda</td>
-            <td>2018038032</td>
-          </tr>
-        </table>
-
-      </footer>
+  </footer>
 
 </html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="reset.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <h2>Check Our User's Best Travel Spot!</h2>
+  <div align="center">
+  <div id="map" style="width:800px; height: 600px" class="text-center"></div>
+
+  <script>
+  function mMap() {
+    var mapCanvas = document.getElementById("map");
+    var myCenter = new google.maps.LatLng(35.918359018132854, 127.8483215613754);
+
+  //  var str = document.getElementByName("loc")
+/*
+    var seoul=0;
+    var daejeon = 0;
+    var gwangju = 0;
+    var daegu = 0;
+    var gangwon = 0;
+    var jeju = 0;
+
+    if(str==0) {
+      seoul+=1;
+    }if(str==1) {
+      daejeon+=1;
+    }if(str==2) {
+      gwangju+=1;
+    }if(str==3) {
+      daegu+=1;
+    }if(str==4) {
+      gangwon+=1;
+    }if(str==5) {
+      jeju+=1;
+    }
+
+    var locations = [
+      ['Seoul, Incheon & Gyeonggi <br><br>'+seoul, 37.55595216766061, 126.97229712511924],
+      ['Daejeon, Sejong & Cheongchung <br><br>'+daejeone, 36.33242105385678, 127.43422172654516],
+      ['Gwangju & Jeolla <br><br>'+gwangju, 35.16631510027585, 126.90810601195697],
+      ['Daegu, Ulsan, Busan & Gyeonsang <br><br>'+daegu, 35.87625125453289, 128.59579901891016],
+      ['Gangwon <br><br>'+gangwon, 37.557690159268596, 128.47722705243928],
+      ['Jeju <br><br>'+jeju, 33.50726244904106, 126.49286559788736]
+    ];
+*/
+    var mapOptions = {
+      center: myCenter,
+      zoom: 7,
+      disableDefaultUI: true
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    var mylocation = new google.maps.Circle({ //이거 배열로 못하나, 일단 천천히 수정하자
+      center: myCenter,
+        radius: 500,
+        strokeColor: "#FF5733",
+        strokeOpacity: 0.9,
+        strokeWeight: 5,
+        fillColor: "#FF5733",
+        fillOpacity: 0.1
+       });
+    mylocation.setMap(map);
+    }
+
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7mhIMq6CTy0Lboza1LgIAdZX0Z5DZNU&callback=mMap"
+  type="text/javascript"></script>
+
+  <br><br>
+  <form>
+    <p>Which is your best spot?</p>
+    <select name="loc" size="1">
+      <option value="choose" selected>choose your spot!</option>
+      <option value="seoul">Seoul, Incheon & Gyeonggi</option>
+      <option value="daejeon">Daejeon, Sejong & Cheongchung</option>
+      <option value="gwangju">Gwangju & Jeolla</option>
+      <option value="daegu">Daegu, Ulsan, Busan & Gyeonsang</option>
+      <option value="gangwon">Gangwon</option>
+      <option value="jeju">Jeju</option>
+    </select>
+    <input type="submit" value="Vote" onclick="alert_select()">
+  </form>
+  <br>
+  <script>
+    function alert_select() {
+      alert("투표 되었습니다");
+    };
+    </script>
+</div>
+
+
+
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Seoul&Gyeonggi-do',    4],
+      ['Gangwon-do',      15],
+      ['Chungcheong-do', 6],      
+      ['Jeolla-do',  8],      
+      ['Jeju Island',  18],      
+      ['Gyeongsang-do',    10]
+      
+    ]);
+
+    var options = {
+      title: 'Popular Travel Area',
+      pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+<div id="donutchart" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
