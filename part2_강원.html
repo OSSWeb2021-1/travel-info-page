@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -37,13 +38,13 @@
             <div id="map" style="width: 800px; height: 450px;"></div>
             <script>
             var locations = [
-              ['Seoul, Incheon & Gyeonggi <br><br>'+'등록된 글 '+' 개<br><a href="#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
-              ['Daejeon, Sejong & Chungcheong <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
-              ['Gwangju & Jeolla <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
-              ['Daegu, Ulsan, Busan & Gyeonsang <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
-              ['Gangwon <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
-              ['Jeju <br><br>'+'등록된 글 '+'개<br><a href="#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
-            ];
+            ['Seoul, Incheon & Gyeonggi <br><br>' + 'Posted articles ' + '6<br><a href="part2_수도.html#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
+            ['Daejeon, Sejong & Chungcheong <br><br>' + 'Posted articles ' + '4<br><a href="part2_충청.html#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
+            ['Gwangju & Jeolla <br><br>' + 'Posted articles ' + '6<br><a href="part2_전라.html#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
+            ['Daegu, Ulsan, Busan & Gyeonsang <br><br>' + 'Posted articles ' + '4<br><a href="part2_경상.html#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
+            ['Gangwon <br><br>' + 'Posted articles ' + '6<br><a href="part2_강원.html#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
+            ['Jeju <br><br>' + 'Posted articles ' + '8<br><a href="part2_제주.html#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
+          ];
 
             function back(){
                var map = new google.maps.Map(document.getElementById('map'), {
@@ -92,15 +93,15 @@
          <script>
          var ment = [
             "",
-            "Hanriver is so beautiful",
-            "Gwanghwamun, the door for the palace",
-            "Gyeonghuiru. A pond in a palace!",
-            "Myungdong has so many shopping centers"
+            "Chodang_ Town smells sweet",
+            "Mt Seolak!",
+            "Rail Bike, your legs will be strong",
+            "Deep Blue Sea, Donghae"
              ];
 
-            for(var i=0;i<4;i++){
+            for(var i=1;i<5;i++){
               document.write('<div class="col-sm-3 each_sec total" style="height : 300px; text-center">');
-              document.write('<img src="seoul'+i+'.jpg" alt="picture" class="img-responsive pic" id="o'+(i+1)+'" onClick="clicking(id)"><p>'+ment[i+1]+'</p>');
+              document.write('<img src="gangwon'+i+'.jpg" alt="picture" class="img-responsive pic" id="o'+i+'" onClick="clicking(id)"><p>'+ment[i]+'</p>');
               document.write('</div>');
             }
 
@@ -110,14 +111,15 @@
            <div>
              <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
 
-             <p>첫번째 팝업</p>
-             <img src="seoul0.jpg">
-             <p>There are many shopping places</p>
-             <p>I'm sure</p>
-             <p>Everyone will</p>
-             <p><b>love</b></p>
-             <p>This place</p>
-             <p>♥</p>
+             <p>Gangneung Chodang Tofu Village was established to commemorate the production of Chodang Tofu for 400 years.</p>
+             <p>If you go to Chodang Tofu Village, there are Chodang Tofu restaurants and ice cream stores.</p>
+             <p>Heo Kyun's father, Heo Yeop, lived in present-day Chodang-dong, Gangneung-si,</p>
+             <p>and processed beans with a net to season them with clean seawater,</p>
+             <p>and when it was rumored to taste good, his pen name "Chodang" was added and originated from Chodang.</p>
+             <img class="cimg" src="gangwon1.jpg">
+             <p>Currently, the birthplace of Samteojari,</p>
+             <p>Nanseolheon Heo Cho-hee and Gyosan Heo Gyun in Chodang-dong is preserved as Gangwon-do Cultural Heritage No. 5.</p>
+             <p>Since then, Chodang Tofu has been introduced.</p>
              <br><br>
 
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
@@ -131,14 +133,19 @@
            <div>
              <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
 
-             <p>두번째</p>
-             <img src="seoul1.jpg">
-             <p>There are many shopping places</p>
-             <p>I'm sure</p>
-             <p>Everyone will</p>
-             <p><b>love</b></p>
-             <p>This place</p>
-             <p>♥</p>
+             <p>Mt. Seorak belongs to the Taebaek Mountains.</p>
+             <p>It is the third highest mountain in South Korea after Hallasan Mountain and Jirisan Mountain.</p>
+             <img class="cimg" src="gangwon2.jpg">
+             <p>It was designated as the fifth national park on March 24, 1970.</p>
+             <p>Seoraksan Mountain has a total area of 398.222 square kilometers.</p>
+
+             <p>Rock rock and Ulsan rock are famous.</p>
+             <p>The rock that shook was actually shaken, but now it is fixed with cement so that it cannot be shaken.</p>
+             <p>Looking at the East Sea from Ulsan rock, Sokcho-si, police and East Sea a sea view is spectacular.</p>
+
+             <p>Baekdamsa Temple and Sinheungsa Temple are located in Seoraksan Mountain,</p>
+             <p> of which Sinheungsa Temple has to pay a so-called admission fee of cultural assets.</p>
+
              <br><br>
 
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
@@ -152,14 +159,16 @@
            <div>
              <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
 
-             <p>3</p>
-             <img src="seoul2.jpg">
-             <p>There are many shopping places</p>
-             <p>I'm sure</p>
-             <p>Everyone will</p>
-             <p><b>love</b></p>
-             <p>This place</p>
-             <p>♥</p>
+             <p>A rail bike is a specially built bicycle along a railroad.</p>
+             <p>The Jeongseon Rail Bike is a railway bicycle that runs 7.2 km from Gujeolli Station in Jeongseon,<br>
+               Gangwon Province to Aura.</p>
+               <img class="cimg" src="gangwon3.jpg">
+               <p> Jeongseon is a place far from the city center,</p>
+               <p> but it has beautiful scenery and scenery that cannot be enjoyed in the city center.</p>
+               <p> It is popular because you can fully feel the scenery.</p>
+
+             <p>photo sources https://www.jeongseon.go.kr/tour/jeongseontour/attractions?contentSeq=100&mode=read</p>
+
              <br><br>
 
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
@@ -171,16 +180,21 @@
          <div id="popup4" style="text-align: center">
            <div>
              <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+             <p>Haeparang-road</p>
+             <p>Road and sea waves in donghae, Gangwon Province.</p>
+             <p>There are well-organized trails and beaches.</p>
+             <p>If you follow the trail, you can see the beautiful scenery in turn.</p>
+             <p>If you go around Ayajin Port, which has a pretty name,<br> you will meet the rough coastal scenery of Cheongjeongjeong.</p>
+             <p>Passing through Songji Lake, the home of winter migratory birds,<br> you will find a traditional house called Yangtong House,</p>
+             <p>which can only be found in northern Gangwon Province.</p>
+             <img class="cimg" src="gangwon4.jpg">
+             <p>Passing through the port of Gaun, Haeparang-gil has farming roads and Cheonbyeon-gil.</p>
+             <p>Passing Geojin Port, the representative fishing port of Goseong, you will find the sunrise trail.</p>
+             <p>If you climb the following gentle uphill, you will see Hwajinpo Lake and the sea in front of Hwajinpo.</p>
+             Passing by Kim Il Sung's villa and Hwajinpo Maritime Museum, you can see the Unification Security Park.</p>
+             <p>The 50-course Jejin checkpoint, the last of Haeparang-gil, to the Unification Observatory section is prohibited from walking.</p>
+             <p>You have to fill out a registration form and use a vehicle at the Unification Security Park.</p>
 
-             <p>4</p>
-             <img src="seoul3.jpg">
-             <p>There are many shopping places</p>
-             <p>I'm sure</p>
-             <p>Everyone will</p>
-             <p><b>love</b></p>
-             <p>This place</p>
-             <p>♥</p>
-             <br><br>
 
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
              </button>
@@ -226,11 +240,11 @@
             <div class="item active">
                <div class="row">
                   <div class="col-sm-3">
-                     <img src="seoul4.jpg" alt="picture" class="img-responsive pic" id="o6" onClick="clicking(id)">
+                     <img src="gangwon7.jpg" alt="picture" class="img-responsive pic" id="o6" onClick="clicking(id)">
                   </div>
                   <div class="col-sm-9 recomword">
-                        <h2>Seoul, the beautiful skyline</h2>
-                        <p>Seoul has been the capital of Korea for more than 600years. There are many things to enjoy.</p>
+                        <h2>JeongDongJin</h2>
+                        <p>Feel the time flows with sand and wind<br>One of the romantic spot of South Korea</p>
                  </div>
                </div>
             </div>
@@ -238,11 +252,11 @@
             <div class="item">
                <div class="row">
                   <div class="col-sm-3">
-                     <img src="seoul5.jpg" alt="picture" class="img-responsive pic" id="o7" onClick="clicking(id)">
+                     <img src="gangwon10.jpg" alt="picture" class="img-responsive pic" id="o7" onClick="clicking(id)">
                   </div>
                   <div class="col-sm-9 recomword">
-                        <h2>Byeolmadang(Coex)</h2>
-                        <p>Byeolmadang is a library in Coex. Coex is the largest comprehensive exhibition center.</p>
+                        <h2>Nam-i Island</h2>
+                        <p>Cool shade, summer on Nami Island. From the north dock to the south. A summer with a deep shade of trees.</p>
                   </div>
                </div>
             </div>
@@ -251,10 +265,18 @@
          <div id="popup6" style="text-align: center">
            <div> <!--팝업 내부-->
                <button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+               <P>Jeongdongjin refers to beaches, beaches, and parks located in Jeongdongjin-ri, Gangdong-myeon, Gangneung-si, Gangwon-do.</P>
+               <P>It is a very famous place for sunrise. On December 31 every year, people flock to see the New Year's sunrise.</P><bR>
+               <img class="cimg" src="gangwon7.jpg"><br>
+               <P>The station is also listed in the Guinness Book of World Records as the closest station to the beach in the world.</P><br>
+               <img class="cimg" src="gangwon8.jpg"><br>
+               <P>There is a huge millennium commemorative sand clock like the picture above, and there is also the "Jeongdongjin Time Museum."</P>
+               <P>As it is a place that became famous due to the drama called Sandwatch, there are many sand clocks as souvenirs.</P><br>
+               <img class="cimg" src="gangwon9.jpg"><br>
+               <P>On the hillside of Jeongdongjin Beach, there is a four-star hotel built in the form of a ship called the Sun Cruise Resort.</P>
+               <P>There is also a sculpture park nearby.</P>
+               <P> The beach is very beautiful from the side of the resort and from the hillside next to the resort near the cliff.</P>
 
-             <p>추천 여행지 첫번째 팝업</p>
-             <img src="seoul4.jpg">
-             <p> 내용 채울 것</p>
              <br><br>
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
              </button>
@@ -268,14 +290,27 @@
            <div> <!--팝업 내부-->
                <button id="c7" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
 
-             <p>추천 여행지 두번째 팝업</p>
-             <img src="seoul5.jpg">
-             <p>There are many shopping places</p>
-             <p>I'm sure</p>
-             <p>Everyone will</p>
-             <p><b>love</b></p>
-             <p>This place</p>
-             <p>♥</p>
+             <p>Cool shade, summer on Nami Island. From the north dock to the south. A summer with a deep shade of trees.</p>
+             <img src="gangwon10.jpg">
+             <p>Nami Island is an island in Chuncheon, Gangwon-do.</p>
+             <p>It was developed as a cultural site and a tourist resort with General Nami's grave, and as of 2016,</p>
+            <p>it is a representative tourist destination in South Korea with a total of 3.3 million visitors annually,</p>
+            <p> including 1.3 million foreign tourists from 122 countries around the world.</p>
+
+            <p>Although it is a small island with a perimeter of about 5 km, it has been famous as an outing site since the 1960s.</p>
+            <p>In December 2010, it was selected as the 14th UNICEF Child Friendly Park in the world and the first in Korea.</p>
+<img src="gangwon11.jpg">
+            <p>Inside the island, there are convenience facilities such as the Song Museum,</p>
+            <p> the World National Instrument Exhibition Hall, Pyeonghwa Gallery, Nammun Gallery,</p>
+            <p> Nami Gallery, Cultural Center, Craft Center, Happy Garden Art Museum, UNICEF Hall, and Andersen Picture Book Center.</p>
+            <p>The Nami Island Cultural Foundation, an organization in charge of cultural and artistic projects,</p>
+            <p> holds more than 600 performances, plays, festivals and exhibitions annually,</p>
+            <p>making it the largest number of cultural performances among domestic tourist attractions.</p>
+            <p> In the drama Winter Sonata, Bae Yong-joon and Choi Ji-woo are famous<br>
+               for walking along the Metasequoia Garosu-gil and Ginkgo Tree Road on Nami Island.</p>
+
+
+
              <br><br>
              <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
              </button>
@@ -393,3 +428,4 @@
    </div>
  </footer>
 </html>
+
