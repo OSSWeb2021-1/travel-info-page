@@ -370,20 +370,22 @@
     function mate() {
       window.open('mate.html');
     }
+
     function process() {
         const str1='jae';
         const str2='123';
+
 
     var id1 = document.getElementById("id1");
     var pass1 = document.getElementById("pass1");
     if(id1.value==str1 && pass1.value==str2)
     {
-        alert('환영합니다');
-        window.open('info1.html');
+        alert('Welcome');
+        window.open("info1.html");
     }
     else
     {
-    alert('아이디,비밀번호를 다시확인해주세요')
+    alert('CHECK ID & PW');
     };
             }
 
@@ -391,10 +393,33 @@
       window.open('new_main.html');
     }
 
+    function part2_수도() {
+      window.open('part2_수도.html');
+    }
 
+    function part2_강원() {
+      window.open('part2_강원.html');
+    }
+
+    function part2_충청() {
+      window.open('part2_충청.html');
+    }
+
+    function part2_경상() {
+      window.open('part2_경상.html');
+    }
+
+    function part2_전라() {
+      window.open('part2_전라.html');
+    }
+
+    function part2_제주() {
+      window.open('part2_제주.html');
+    }
 
     var arrname = ["METROPOLITAN", "GANGWON", "CHUNGCHEONG", "GYEONGSANG", "JEONLA", "JEJU"];
     var arrmate = ["Sally", "Ryn", "Mike", "Min"];
+    var arrfunctionname = ["part2_수도()", "part2_강원()", "part2_충청()", "part2_경상()", "part2_전라()", "part2_제주()"];
   </script>
 </head>
 
@@ -434,15 +459,16 @@
           <ul class="dropdown-menu" style="width : 700px">
             <div class="col-sm-4">
               <p><strong>contact</strong></p>
-              <p>01012345678</p>
+              <p>LuckySeven@gmail.com</p>
             </div>
             <div class="col-sm-4">
               <p><strong>Information</strong></p>
-              <p>01012345678</p>
+              <p>LuckySeven</p>
             </div>
             <div class="col-sm-4">
               <p><strong>Frequently asked questions</strong></p>
-              <p>Hi</p>
+              <p>How can I wirte article?</p>
+              <p>How can I see mate?</p>
             </div>
           </ul>
         </li>
@@ -481,7 +507,7 @@
         document.write('<div class="row">');
         for (var i = 0; i < 3; i++) {
           document.write('<div class="col-sm-4">');
-          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="' + arrfunctionname[i] +'" onmouseover="onimage(this)" onmouseout="outimage(this)"');
           for (var k = 0; k < 18; k++) {
             document.write('<br>');
           }
@@ -513,7 +539,7 @@
         document.write('<div class="row">');
         for (var i = 3; i < 6; i++) {
           document.write('<div class="col-sm-4">');
-          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="' + arrfunctionname[i] +'" onmouseover="onimage(this)" onmouseout="outimage(this)"');
           for (var k = 0; k < 18; k++) {
             document.write('<br>');
           }
@@ -644,6 +670,9 @@
           <li> <a href="#"> JungYeonHwi </a> </li>
         </ul>
       </div>
+
+
+
     </div>
     <div class="footerbottom">
       <div class="container">
