@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="reset.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="part2_recent_css.css">
+</head>
+<header>
+  <div id="titlediv">
+    <img class="titleimg" src="titleblue2.jpg">
+  </div>
+  <div class="container-fluid text-center bg">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+        <li><a href="info1.html">Home</a></li>
+
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+<br>
+<br><br><br><br><br>
+
+
+<!-- <hr style="border: solid 2px black;"> -->
+
+<body style="margin:0 auto;">
+
+  <div class="container-fluid total_articles">
+
+    <script>
+      var ment = [
+        "",
+        "I want to eat more...choco pie...in Jeonju.",
+        "The beauty of Gunsan!",
+        "Yeo Jin-gu and come back next time! Mokpo!",
+        "girlfriend's best date course.",
+        "Boseong green tea in the beautiful trip.",
+        "Yeosu BamBamBa is the best."
+      ];
+
+      for (var i = 1; i < 7; i++) {
+        document.write('<div class="total">');
+        document.write('<div class="col-sm-3" style="height : 300px"> <div class="each_pic">');
+        document.write('<img src="jeonla' + (i - 1) + '.jpg" alt="picture" class="img-responsive pic" id="o' + i + '" onClick="clicking(id);"><p>' + ment[i] + '</p>');
+        document.write('</div></div></div>');
+      }
+    </script>
+
+
+    <div id="popup1" style="text-align: center">
+
+      <div>
+        <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>I went to Jeonju, the center of Jeollabuk-do.</p>
+        <p>Jeonju has long been a place with a wonderful cultural heritage.</p>
+        <p>In particular, Hanok Village is a key attraction in Jeonju.</p>
+        <img class="cimg" src="jeonla0.jpg">
+        <p>In Hanok Village, we ate a confectionery called Choco Pie.</p>
+        <p>I bought it in bulk because it was so delicious compared to other chocolate pie.</p>
+        <br>
+        <p>In the evening, we toured the night market of the southern market together.</p>
+        <p>Unique shops caught my eye.</p>
+        <p>I want to go there again next time.</p>
+        <p>♥</p>
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup2" style="text-align: center">
+
+      <div>
+        <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>I went to Gunsan in Jeollabuk-do this summer.</p>
+        <p>It was really fun to learn modern history and take pictures of various places while traveling around the city.</p>
+        <br>
+        <img class="cimg" src="jeonla1.jpg">
+        <p>My favorite movie is "Christmas in August".</p>
+        <p>There were many filming sites set in the movie in Gunsan.</p>
+        <img class="cimg" src="movie.jpg">
+        <br>
+        <p>It is also a good place to visit the house of Shinheung-dong, where visitors can take a look at Japanese modern culture.</p>
+        <br>
+        <p>And bread is my favorite food, and Lee Sung Dang bakery was so delicious.</p>
+        <p>♥</p>
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup3" style="text-align: center">
+
+      <div>
+        <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>Mokpo is located in the southern part of Jeollanam-do, and the sea was really nice.</p>
+        <p>Mokpo is one of the four major ports of Joseon, and it seems to have been popular since ancient times.</p>
+        <br>
+        <p>The West Coast Expressway opened recently, so I was able to get there comfortably.</p>
+        <p>Looking at the sea of Mokpo, I walked on a nearby forest road, and I think it was so cool and nice.</p>
+        <br>
+        <img class="cimg" src="jeonla2.jpg">
+        <p>And it was really nice to see the filming sites of the drama 'Hotel Del Luna' starring my best celebrity Yeo Jin-gu.</p>
+        <p>Wow, I want to see Yeo Jin-gu in person.</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+    <div id="popup4" style="text-align: center">
+      <div>
+        <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>I went to Damyang with my girlfriend.</p>
+        <p>My girlfriend wanted to go on a different trip, so I went somewhere and went to Damyang.</p>
+        <br>
+        <img class="cimg" src="jeonla3.jpg">
+        <p>Damyang was also the best as a dating course.</p>
+        <p>It was an unforgettable trip for me because I could walk through thick bamboo forests.</p>
+        <p>I took a lot of pictures next to the trees, and I looked like I was over 180cm tall! Hurray!!</p>
+        <br>
+        <p>Damyang was the first to hear of Slow City, and it was the best healing trip.</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+    </div>
+
+    <div id="popup5" style="text-align: center">
+      <div>
+        <button id="c5" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+        <p>If you do Boseong!! Green tea!</p>
+        <p>These days people say ice even if they freeze to death, but it's a pleasure for me to eat green tea warmly.</p>
+        <br>
+        <img class="cimg" src="jeonla4.jpg">
+        <p>I had to keep going to Bosung, but now I feel like I'm making up my mind.</p>
+        <p>If you are planning a trip to Boseong, you should go to the famous Daehan Daewon!!!!</p>
+        <p>I didn't know the green tea field was this big.</p>
+        <p>It was like 50 times as big as my house.</p>
+        <br>
+        <p>And I also went to Jeamsan Natural Recreation Forest where I can experience tracking.</p>
+        <p>I came here because I heard I could experience Temple Stay, and bibimbap is the best place.I went to Damyang with my girlfriend.</p>
+        <p>My girlfriend wanted to go on a different trip, so I went somewhere and went to Damyang.</p>
+        <br>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+    </div>
+
+    <div id="popup6" style="text-align: center">
+      <div>
+        <button id="c6" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+        <p>My best singer!! Busker Busker's Best Song!! Yeosu Night Sea. I went to Yeosu.</p>
+        <p>As expected, the road that I walk with my boyfriend while looking at the night view still makes my heart pound.</p>
+        <p>It is sentimental to watch busking performances while drinking at night in Yeosu.</p>
+        <br>
+        <p>I used to ride a cable car on the sea, but I couldn't see a thing maybe because I rode it too late at night.</p>
+        <p>It's too bad.</p>
+        <br>
+        <img class="cimg" src="jeonla5.jpg">
+        <p>Next time I go out, I'll take a cable car in the afternoon.</p>
+        <br>
+        <p>It was hard for me because the distance to Yeosu is too far, but I think I am leaving a big memory.</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+    </div>
+
+  </div> <!-- container-fluid -->
+
+  <div class="row text-center">
+    <div class="col-sm-12">
+      <button class="btn btn-default" onClick="location.href='part2_전라.html'" type="submit">Back</button>
+      <br><br><br>
+      <!--글자만 있는걸로 바꾸기-->
+    </div>
+  </div>
+  <script type="text/javascript" src="part2_recent.js"></script>
+</body>
+<footer id="footer">
+  <div class="container">
+    <div class="col-sm-4">
+      <img src="webmap.png" alt="#" class="img-responsive logo">
+      <p>
+        2021 Software Department Web Project.
+      </p>
+    </div>
+    <div class="col-sm-4" style="padding-top: 70px;">
+      <h5>
+        Popular tags
+      </h5>
+      <ul class="places">
+        <li>
+          <a href="#" class="place">
+            Vacation
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Seoul
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Sally
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            JeJu
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Trip
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            healing
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Europe
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Island
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        CATEGORIES
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Map </a> </li>
+        <li> <a href="#"> Last article </a> </li>
+        <li> <a href="#"> recommend </a> </li>
+        <li> <a href="#"> mate </a> </li>
+
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        ABOUT US
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Park Jaewon </a> </li>
+        <li> <a href="#"> Kim Yewon </a> </li>
+        <li> <a href="#"> JungYeonHwi </a> </li>
+      </ul>
+    </div>
+
+
+  </div>
+  <div class="footerbottom">
+    <div class="container">
+
+      <p>
+        <strong>
+          Copyright 2021
+        </strong>
+        Jaewon,YeonHwi,Yewon
+        <strong>
+          by LuckySeven
+        </strong>
+      </p>
+
+
+    </div>
+  </div>
+</footer>
+
+
+
+</html>

@@ -368,9 +368,33 @@
       window.open('info.html');
     }
 
+    function part2_수도() {
+      window.open('part2_수도.html');
+    }
+
+    function part2_강원() {
+      window.open('part2_강원.html');
+    }
+
+    function part2_충청() {
+      window.open('part2_충청.html');
+    }
+
+    function part2_경상() {
+      window.open('part2_경상.html');
+    }
+
+    function part2_전라() {
+      window.open('part2_전라.html');
+    }
+
+    function part2_제주() {
+      window.open('part2_제주.html');
+    }
 
     var arrname = ["METROPOLITAN", "GANGWON", "CHUNGCHEONG", "GYEONGSANG", "JEONLA", "JEJU"];
     var arrmate = ["Sally", "Ryn", "Mike", "Min"];
+    var arrfunctionname = ["part2_수도()", "part2_강원()", "part2_충청()", "part2_경상()", "part2_전라()", "part2_제주()"];
   </script>
 </head>
 
@@ -410,15 +434,16 @@
           <ul class="dropdown-menu" style="width : 700px">
             <div class="col-sm-4">
               <p><strong>contact</strong></p>
-              <p>01012345678</p>
+              <p>LuckySeven@gmail.com</p>
             </div>
             <div class="col-sm-4">
               <p><strong>Information</strong></p>
-              <p>01012345678</p>
+              <p>LuckySeven</p>
             </div>
             <div class="col-sm-4">
               <p><strong>Frequently asked questions</strong></p>
-              <p>Hi</p>
+              <p>How can I wirte article?</p>
+              <p>How can I see mate?</p>
             </div>
           </ul>
         </li>
@@ -439,11 +464,11 @@
 
   <br>
   <div class="menubar">
-    <button type="button" class="menubutton" id="mapbutton" onmouseover="onmap()" onmouseout="outmap()" onclick="map()"><span class="glyphicon glyphicon-picture"></span> MAP</button>
-    <button type="button" class="menubutton" id="latestbutton" onmouseover="onlatest()" onmouseout="outlatest()" onclick="latest()"><span class="glyphicon glyphicon-thumbs-up"></span> LASTEST ARTICLE</button>
-    <button type="button" class="menubutton" id="matebutton" onmouseover="onmate()" onmouseout="outmate()" onclick="mate()"><span class="glyphicon glyphicon-pencil"></span> MATE</button>
-    <button type="button" class="menubutton" id="votebutton" onmouseover="onvote()" onmouseout="outvote()" onclick="vote()"><span class="glyphicon glyphicon-tag"></span> VOTE</button>
-    <button type="button" class="menubutton" id="writebutton" onmouseover="onwrite()" onmouseout="outwrite()" onclick="write()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton" id="mapbutton" onmouseover="onmap()" onmouseout="outmap()" onclick="map()"><span class="glyphicon glyphicon-map-marker"></span> MAP</button>
+    <button type="button" class="menubutton" id="matebutton" onmouseover="onmate()" onmouseout="outmate()" onclick="mate()"><span class="glyphicon glyphicon-hand-right"></span> MATE <span class="glyphicon glyphicon-hand-left"></span></button>
+    <button type="button" class="menubutton" id="votebutton" onmouseover="onvote()" onmouseout="outvote()" onclick="vote()"><span class="glyphicon glyphicon-inbox"></span> VOTE</button>
+    <button type="button" class="menubutton" id="writebutton" onmouseover="onwrite()" onmouseout="outwrite()" onclick="write1()"><span class="glyphicon glyphicon-pencil"></span> WRITE</button>
+    <button type="button" class="menubutton" id="contactbutton" onmouseover="oncontact()" onmouseout="outcontact()" onclick="contact()"><span class="glyphicon glyphicon-flash"></span> CONTACT</button>
   </div>
   <br>
 
@@ -453,7 +478,7 @@
         document.write('<div class="row">');
         for (var i = 0; i < 3; i++) {
           document.write('<div class="col-sm-4">');
-          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="' + arrfunctionname[i] +'" onmouseover="onimage(this)" onmouseout="outimage(this)"');
           for (var k = 0; k < 18; k++) {
             document.write('<br>');
           }
@@ -485,7 +510,7 @@
         document.write('<div class="row">');
         for (var i = 3; i < 6; i++) {
           document.write('<div class="col-sm-4">');
-          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="latest()" onmouseover="onimage(this)" onmouseout="outimage(this)"');
+          document.write('<div class="bg-'+arrname[i]+'" id="imageb" onclick="' + arrfunctionname[i] +'" onmouseover="onimage(this)" onmouseout="outimage(this)"');
           for (var k = 0; k < 18; k++) {
             document.write('<br>');
           }
@@ -514,10 +539,10 @@
     <div class="container-fluid text-center">
       <div class="col-sm-12">
         <h1>Who will be your best Travel Mate?</h1>
-        <button type="button" class="imagebutton" onclick="latest()">more</button>
+        <button type="button" class="imagebutton" onclick="mate()">more</button>
       </div>
     </div>
-<br><br><br><br><br>
+
     <br>
 
     <div class="container-fluid text-center">

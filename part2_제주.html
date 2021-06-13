@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>part2</title>
+  <link rel="stylesheet" href="reset.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="part2_css.css">
+</head>
+
+<body>
+  <!--map-->
+  <header>
+    <div id="titlediv">
+      <img src="titleblue2.jpg">
+    </div>
+    <div class="container-fluid text-center bg">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li><a href="info1.html">Home</a></li>
+        </ul>
+      </div>
+
+      </ul>
+    </div>
+  </header>
+  <br><br>
+  <div class="container-fluid">
+
+    <body>
+      <div align="center">
+        <div id="map" style="width: 800px; height: 450px;"></div>
+        <script>
+          var locations = [
+            ['Seoul, Incheon & Gyeonggi <br><br>' + 'Posted articles ' + '6<br><a href="part2_수도.html#recent">Check the Articles</a>', 37.55595216766061, 126.97229712511924],
+            ['Daejeon, Sejong & Chungcheong <br><br>' + 'Posted articles ' + '4<br><a href="part2_충청.html#recent">Check the Articles</a>', 36.33242105385678, 127.43422172654516],
+            ['Gwangju & Jeolla <br><br>' + 'Posted articles ' + '6<br><a href="part2_전라.html#recent">Check the Articles</a>', 35.16631510027585, 126.90810601195697],
+            ['Daegu, Ulsan, Busan & Gyeonsang <br><br>' + 'Posted articles ' + '4<br><a href="part2_경상.html#recent">Check the Articles</a>', 35.87625125453289, 128.59579901891016],
+            ['Gangwon <br><br>' + 'Posted articles ' + '6<br><a href="part2_강원.html#recent">Check the Articles</a>', 37.557690159268596, 128.47722705243928],
+            ['Jeju <br><br>' + 'Posted articles ' + '8<br><a href="part2_제주.html#recent">Check the Articles</a>', 33.50726244904106, 126.49286559788736]
+          ];
+
+          function back() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 6.5,
+              center: new google.maps.LatLng(35.918359018132854, 127.8483215613754),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var marker, i;
+            for (i = 0; i < locations.length; i++) {
+              marker = new google.maps.Marker({
+                id: i,
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+              });
+
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                  infowindow.setContent(locations[i][0]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
+
+              if (marker) {
+                marker.addListener('click', function() {
+                  map.setZoom(15);
+                  map.setCenter(this.getPosition());
+                });
+              }
+            }
+
+          }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7mhIMq6CTy0Lboza1LgIAdZX0Z5DZNU&callback=back" type="text/javascript"></script>
+
+      </div>
+  </div>
+  <br><br>
+
+  <div class="container-fluid" id="recent">
+    <br><br><br><br><br>
+    <h1>Recent Articles</h1>
+    <br>
+    <script>
+      var ment = [
+        "",
+        "Mt. Halla, the highest mountain in Korea.",
+        "The sunrise of Seongsan Ilchulbong was the best.",
+        "The longest cave in the world!! Manjanggul!",
+        "Peanut!!! Island of!!! Udo!"
+      ];
+
+      for (var i = 0; i < 4; i++) {
+        document.write('<div class="col-sm-3 each_sec total" style="height : 300px; text-center">');
+        document.write('<img src="jeju' + i + '.jpg" alt="picture" class="img-responsive pic" id="o' + (i + 1) + '" onClick="clicking(id)"><p>' + ment[i + 1] + '</p>');
+        document.write('</div>');
+      }
+    </script>
+
+    <div id="popup1" style="text-align: center">
+
+      <div>
+        <button id="c1" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+        <p>At an elevation of 1,950m, I went to Hallasan Mountain, the highest mountain in Korea.</p>
+        <p>Hallasan Mountain is an indispensable place for a trip to Jeju Island.</p>
+        <br>
+        <p>The mysterious Baekrokdam will be an unforgettable memory for a long time.</p>
+        <p>It was so hard to get to the top that I almost gave up.</p>
+        <p>But when I reached the top, I was extremely proud.</p>
+        <p>This time, I chose an easy course, but next time, I will choose a more difficult course.</p>
+        <br>
+        <img class="cimg" src="jeju0.jpg">
+        <br>
+        <p>Summer's conquest of Hallasan Mountain!!!
+          <img class="cimg" src="jeju0_1.jpg">
+          <br>
+        <p>Next time, we will conquer Mt. Halla in winter.</p>
+        <p>♥</p>
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup2" style="text-align: center">
+
+      <div>
+        <button id="c2" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>Seongsan Ilchulbong Peak is a representative natural landscape of Jeju Island.</p>
+        <p>When I reached the top, I could see a 600m crater.</p>
+        <br>
+        <p>Every morning, tourists are crowded to see the sunrise.</p>
+        <p>Fortunately, there were few people on the day I went.</p>
+        <br>
+        <img class="cimg" src="jeju1.jpg">
+        <p>We could take nice pictures, enjoy the magnificent view and take a walk in the green grasslands.</p>
+        <p>I want to go there again next time.
+        <p>
+        <p>♥</p>
+        <br><br>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+
+    <div id="popup3" style="text-align: center">
+
+      <div>
+        <button id="c3" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>When I went to Jeju Island two years ago, I regretted something, but I couldn't go to Udo Island right away.</p>
+        <p>So I went to Udo Island as soon as I arrived on this trip to Jeju Island.</p>
+        <br>
+        <p>I entered the port in Seogwipo by boat for about 15 minutes.</p>
+        <img class="cimg" src="jeju2.jpg">
+        <p>It was the best to make a memory because you can meet exotic scenery and pretty cafe in Udo.</p>
+        <br>
+        <p>Seongsan Ilchulbong is next to me, so I'll look around together next time if I have time.</p>
+        <p>Udo! As expected! You're the best as I expected!</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+
+    </div>
+
+    <div id="popup4" style="text-align: center">
+      <div>
+        <button id="c4" onClick="closing(id)" type="button" class="pbtn btn btn-outline-secondary">Close</button>
+
+        <p>I went to Jeju island with my son.
+        <p>I went to the Jeju National Museum to see about the history and culture of Jeju Island.</p>
+        <br>
+        <p>I studied the history of Jeju Island because I could see it at a glance from each era.</p>
+        <p>And I experienced it because the experience center also runs an educational program for families.</p>
+        <br>
+        <img class="cimg" src="jeju3.jpg">
+        <img class="cimg" src="jeju3_1.jpg">
+        <p>Admission to the museum was free.</p>
+        <p>I know history, I'm free of money, it's the best.</p>
+        <p>♥</p>
+        <br><br>
+
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-up btn-lg">
+        </button>
+        <button onClick="increase()" type="button" class="btn btn-outline-secondary glyphicon glyphicon-thumbs-down btn-lg">
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!--최신글로 이동하는 버튼-->
+  <div id="rec_btns">
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-default pull-right" onClick="location.href='part2_recent_제주.html'" type="submit">More</button>
+        <!--글자만 있는걸로 바꾸기-->
+        <button class="btn btn-default pull-right" onClick="back(); location.href='#map'" type="submit">Back</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="#recom" class="pull-right">We also have some recommendations for you!</a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <br>
+  <br>
+
+
+
+  <!--recommendation-->
+  <div class="container-fluid" id="recom">
+    <br><br><br><br><br>
+    <h1>Recommendation</h1>
+    <br><br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+
+      <div class="carousel-inner total">
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="jeju10.jpg" alt="picture" class="img-responsive pic" id="o6" onClick="clicking(id)">
+            </div>
+            <div class="col-sm-9 recomword">
+              <h2>A large green tea field located on Jeju Island.</h2>
+              <p>There are many things to see as well as green tea fields.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="jeonla11.jpg" alt="picture" class="img-responsive pic" id="o7" onClick="clicking(id)">
+            </div>
+            <div class="col-sm-9 recomword">
+              <h2>If you think of Jeju Island! Black Pig</h2>
+              <p>Black pig, you can do various activities, such as feeding, horseback riding experience.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <br><br><br><br><br><br>
+
+  </div>
+
+  <script type="text/javascript" src="part2_js.js"></script>
+  <br><br><br>
+</body>
+
+<footer id="footer">
+  <div class="container">
+    <div class="col-sm-4">
+      <img src="webmap.png" alt="#" class="img-responsive logo">
+      <p style="margin: 0 0 1.75em;">
+        2021 Software Department Web Project.
+      </p>
+    </div>
+    <div class="col-sm-4" style="padding-top: 70px;">
+      <h5>
+        Popular tags
+      </h5>
+      <ul class="places">
+        <li>
+          <a href="#" class="place">
+            Vacation
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Seoul
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Sally
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            JeJu
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Trip
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            healing
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Europe
+          </a>
+        </li>
+        <li>
+          <a href="#" class="place">
+            Island
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        CATEGORIES
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Map </a> </li>
+        <li> <a href="#"> Last article </a> </li>
+        <li> <a href="#"> recommend </a> </li>
+        <li> <a href="#"> mate </a> </li>
+
+      </ul>
+    </div>
+    <div class="col-sm-2">
+      <h5>
+        ABOUT US
+      </h5>
+      <ul class="list-unstyled">
+        <li> <a href="#"> Park Jaewon </a> </li>
+        <li> <a href="#"> Kim Yewon </a> </li>
+        <li> <a href="#"> JungYeonHwi </a> </li>
+      </ul>
+    </div>
+
+
+
+  </div>
+  <div class="footerbottom">
+    <div class="container">
+
+      <p>
+        <strong>
+          Copyright 2021
+        </strong>
+        Jaewon,YeonHwi,Yewon
+        <strong>
+          by LuckySeven
+        </strong>
+      </p>
+
+
+    </div>
+  </div>
+</footer>
+
+</html>
